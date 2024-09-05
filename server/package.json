@@ -7,7 +7,7 @@
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node server.js",
       "develop": "concurrently \" npm run watch\" \"cd client && npm run dev\"",
-"install": "npm i && cd ../client && npm i --production=false",
+"install": "npm i && cd client && npm i --production=false",
 "build": "cd client && npm run build",
 "render-build":"npm install && npm run build"
     },
