@@ -24,6 +24,6 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 });
 
 // route
-app.get("/", (req, res) => {
+app.get("/facets", (req, res) => {
     res.status(201).json({message: "Connected to MongoDB Atlas Cluster for Facets Collection"});
 });
