@@ -15,7 +15,7 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div>
     {/* HTML Goes Here */}
       <header>
         <h1>Cognitive Facets for learning technical materials</h1>
@@ -39,7 +39,7 @@ function App() {
       <footer>
         <p>&copy; 2024 Pam Van Londen for Oregon State University</p>
       </footer>
-    </>
+    </div>
   )
 }
 
