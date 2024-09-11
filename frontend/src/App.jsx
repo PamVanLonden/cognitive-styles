@@ -6,8 +6,12 @@ import Slogan from './modules/Slogan.jsx';
 import HomePage from './modules/HomePage.jsx';
 import PersonasPage from './modules/PersonasPage.jsx';
 import FacetsPage from './modules/FacetsPage.jsx';
-import QuizPage from './modules/quizzes/QuizPage.jsx';
-import QuizSummary from './modules/quizzes/QuizSummary.jsx';
+import SelfEfficacySurvey from './modules/quizzes/SelfEfficacySurvey.jsx';
+import MotivationSurvey from './modules/quizzes/MotivationSurvey.jsx';
+import LearningStyleSurvey from './modules/quizzes/LearningStyleSurvey.jsx';
+import InformationProcessingSurvey from './modules/quizzes/InformationProcessingSurvey.jsx';
+import AttitudeTowardRiskSurvey from './modules/quizzes/AttitudeTowardRiskSurvey.jsx';
+import SurveySummary from './modules/quizzes/SurveySummary.jsx';
 
 
 // import reactLogo from './assets/react.svg'
@@ -29,11 +33,15 @@ function App() {
         <main>
         <section>
           <Routes>
-              <Route path="/"             element={<HomePage />}></Route>
-              <Route path="/personasPage" element={<PersonasPage />}></Route>
-              <Route path="/facetsPage"   element={<FacetsPage />}></Route>             
-              <Route path="/quiz"         element={<QuizPage />}></Route>
-              <Route path="/quizSummary"  element={<QuizSummary />}></Route>
+              <Route path="/"                     element={<HomePage />}></Route>
+              <Route path="/personasPage"         element={<PersonasPage />}></Route>
+              <Route path="/facetsPage"           element={<FacetsPage />}></Route>             
+              <Route path="/self-efficacy-survey" element={<SelfEfficacySurvey />}></Route>
+              <Route path="/motivation-survey"    element={<MotivationSurvey />}></Route>
+              <Route path="/learning-style-survey" element={<LearningStyleSurvey />}></Route>
+              <Route path="/info-processing-survey" element={<InformationProcessingSurvey />}></Route>
+              <Route path="/attitude-risk-survey" element={<AttitudeTowardRiskSurvey />}></Route>
+              <Route path="/surveySummary"          element={<SurveySummary />}></Route>
           </Routes>
         </section>
         </main>
