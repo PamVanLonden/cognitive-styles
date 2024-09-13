@@ -15,7 +15,7 @@ function SurveySummary() {
  
    // Define the pages and their corresponding keys.
    const pages = {
-    SelfEfficacy: ['sefappSelection', 'sefEmailHelp', 'sefEmailWatched', 'sefEmailNoOne', 'sefEmailSomeoneHelped', 'sefEmailShown', 'sefEmailSimilar', 'sefEmailNever', 'sefEmailConfidence'], 
+    SelfEfficacy: ['sefEmailHelp', 'sefEmailHelpRating', 'sefEmailWatched', 'sefEmailNoOne', 'sefEmailSomeoneHelped', 'sefEmailShown', 'sefEmailSimilar', 'sefEmailNever', 'sefEmailConfidence'], 
     Motivation: ['mSuiteApps', 'mSuiteAppsRating', 'mSuiteLookGood', 'mSuiteTester'], 
     LearningStyle:  ['lsSpreadsheets', 'lsSpreadsheetsRating', 'lsSpreadsheetExplore', 'lsSpreadsheetCustomize'], 
     InformationProcessingStyle: ['ipsGatherInfo', 'ipsResearch', 'ipsUnderstandDirection'], 
@@ -46,7 +46,7 @@ const grandTotal = Object.values(pageTotals).reduce((sum, total) => sum + total,
 
 // Extract selected software/hardware values from surveyData
 const { 
-  sefAppSelection, 
+  sefEmailHelp, 
   mSuiteApps, 
   lsSpreadsheets, 
   atrAvoidAdvancedSections 
@@ -69,7 +69,7 @@ const {
 
     
       <p>Selected choices were 
-        {sefAppSelection || "Not selected"}, 
+        {sefEmailHelp || "Not selected"}, 
         {mSuiteApps || "Not selected"}, 
         {lsSpreadsheets || "Not selected"}, 
         {atrAvoidAdvancedSections || "Not selected"}

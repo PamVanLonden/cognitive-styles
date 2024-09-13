@@ -19,30 +19,21 @@ const SelfEfficacySurvey = () => {
                 <fieldset><legend>Self-efficacy</legend>
  
                     <div className="question ">
-                        <label htmlFor="sefAppSelection"><span class="circle">1.</span> 
+                      
+                        <label htmlFor="sefEmailHelp"><span class="circle">1.</span> 
                         I am able to use the &nbsp;
                         <select 
-                            name="sefAppSelection" 
-                            value={formValues.sefAppSelection || ''} 
+                            name="sefEmailHelp" 
+                            value={formValues.sefEmailHelp || ''} 
                             onChange={handleInputChange}
                         >
                             <option value="">choose...</option>
                             <option value="Microsoft Outlook">Microsoft Outlook</option>
                             <option value="Google Calendar">Google Calendar</option>
                             <option value="Apple iCal">Apple iCal</option>
-                        </select> email program when...
-                        </label>   
-                        {/* Do not display button group here.         */}
-                            {/* <div className="buttonGroupOff">
-                                <ButtonGroup className="buttonGroupOff"   />
-                            </div> */}
-                        </div>
-
-                    <div className="question indent"> 
-                        <label htmlFor="sefEmailHelp">
-                            ...I have just the built-in "Help" menu for assistance.&nbsp;
+                        </select> email program when I have just the built-in "Help" menu for assistance.&nbsp;
                         </label>
-                        <ButtonGroup name="sefEmailHelp" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailHelpRating" onChange={handleInputChange} />
                     </div>
                     
                     <div className="question indent">
