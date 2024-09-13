@@ -1,25 +1,9 @@
-import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SurveyContext } from '../utils/SurveyContext';
-import ButtonGroup from '../utils/SelectedOptions';
- 
+import ButtonGroup from '../utils/ButtonGroup';
+import { useSurveyForm } from '../utils/useSurveyForm'; // Import the custom hook
 
-function AttitudeTowardRiskSurvey(){
-    const { addSurveyData } = useContext(SurveyContext);
-    const [formValues, setFormValues] = useState({
-        // Store the ButtonGroup values
-        atrAvoidAdvancedSections: '', 
-        atrAvoidDanger: '',
-        atrUseUnproven: '',
-    });
-
-    const handleInputChange = (name, value) => {
-        setFormValues({ ...formValues, [name]: value });
-    };
-
-    const handleNextPage = () => {
-        addSurveyData(formValues); // Save form values before moving to the next page
-    };
+const AttitudeTowardRiskSurvey = () => {
+    const { formValues, handleInputChange, handleNextPage } = useSurveyForm();
 
     return (
         <>
@@ -31,18 +15,21 @@ function AttitudeTowardRiskSurvey(){
             <form id="survey">
                 <fieldset><legend>Attitudes towards risk</legend>
  
-                <div className="question">
-                    <label htmlFor="atrAvoidAdvancedSections">
-                        <span class="circle">12.</span> &nbsp;
-                        I avoid "advanced" buttons or sections in 
-                        <select>
-                            <option>Microsoft Excel</option>
-                            <option>Google Sheets</option>
-                            <option>Apple Numbers</option>
-                        </select> {''}.
-                     </label>
-
-                    <ButtonGroup name="atrAvoidAdvancedSections" onChange={handleInputChange} />
+                <div className="question ">
+                    <label htmlFor="atrAvoidAdvancedSections"><span class="circle">6.</span> 
+                    I avoid "advanced" buttons or sections in&nbsp;
+                    <select 
+                            name="atrAvoidAdvancedSections" 
+                            value={formValues.atrAvoidAdvancedSections || ''} 
+                            onChange={handleInputChange}
+                        >
+                        <option value="">choose...</option>
+                        <option value="Microsoft Excel">Microsoft Excel</option>
+                        <option value="Google Sheets">Google Sheets</option>
+                        <option value="Apple Numbers">Apple Numbers</option>
+                    </select>.
+                    </label>
+                    <ButtonGroup name="atrAvoidAdvancedSectionsRatings" onChange={handleInputChange} />
                 </div> 
 
                 <div className="question">

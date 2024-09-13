@@ -1,30 +1,10 @@
-import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SurveyContext } from '../utils/SurveyContext';
-import ButtonGroup from '../utils/SelectedOptions.jsx';
- 
+import ButtonGroup from '../utils/ButtonGroup.jsx';
+import { useSurveyForm } from '../utils/useSurveyForm'; // Import the custom hook
 
-function SelfEfficacySurvey(){
-    const { addSurveyData } = useContext(SurveyContext);
-    const [formValues, setFormValues] = useState({
-        // Store the ButtonGroup values
-        sEFEmailHelp: '', 
-        sEFEmailWatched: '',
-        sEFEmailNoOne: '',
-        sEFEmailSomeoneHelped: '',
-        sEFEmailShown: '',
-        sEFEmailSimilar: '',
-        sEFEmailNever: '',
-        sEFEmailConfidence: '',
-    });
 
-    const handleInputChange = (name, value) => {
-        setFormValues({ ...formValues, [name]: value });
-    };
-
-    const handleNextPage = () => {
-        addSurveyData(formValues); // Save form values before moving to the next page
-    };
+const SelfEfficacySurvey = () => {
+    const { formValues, handleInputChange, handleNextPage } = useSurveyForm();
 
     return (
         <>
@@ -38,65 +18,76 @@ function SelfEfficacySurvey(){
             <form id="survey">
                 <fieldset><legend>Self-efficacy</legend>
  
-                    <p><span class="circle">1.</span> I am able to use the &nbsp;
-                        <select>
-                            <option>Microsoft Outlook</option>
-                            <option>Google Calendar</option>
-                            <option>Apple iCal</option>
-                        </select>  {''} email program when...
-                    </p>
-                    
-                    <div className="question"> 
-                        <label htmlFor="sEFEmailHelp">
+                    <div className="question ">
+                        <label htmlFor="sefAppSelection"><span class="circle">1.</span> 
+                        I am able to use the &nbsp;
+                        <select 
+                            name="sefAppSelection" 
+                            value={formValues.sefAppSelection || ''} 
+                            onChange={handleInputChange}
+                        >
+                            <option value="">choose...</option>
+                            <option value="Microsoft Outlook">Microsoft Outlook</option>
+                            <option value="Google Calendar">Google Calendar</option>
+                            <option value="Apple iCal">Apple iCal</option>
+                        </select> email program when...
+                        </label>   
+                        {/* Do not display button group here.         */}
+                            {/* <div className="buttonGroupOff">
+                                <ButtonGroup className="buttonGroupOff"   />
+                            </div> */}
+                        </div>
+
+                    <div className="question indent"> 
+                        <label htmlFor="sefEmailHelp">
                             ...I have just the built-in "Help" menu for assistance.&nbsp;
                         </label>
-                        <ButtonGroup name="sEFEmailHelp" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailHelp" onChange={handleInputChange} />
                     </div>
                     
-                    <div className="question">
-                        <label htmlFor="sEFEmailWatched">
+                    <div className="question indent">
+                        <label htmlFor="sefEmailWatched">
                             ...I have seen someone else using it before trying it myself.&nbsp;
                         </label>
-                        <ButtonGroup name="sEFEmailWatched" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailWatched" onChange={handleInputChange} />
                     </div>
                     
-                    <div className="question">
-                    <label htmlFor="sEFEmailNoOne">
+                    <div className="question indent">
+                    <label htmlFor="sefEmailNoOne">
                         ...no one is around to help me if I need it.&nbsp;</label>
-                        <ButtonGroup name="sEFEmailNoOne" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailNoOne" onChange={handleInputChange} />
                     </div>
                     
-                    <div className="question">
-                        <label htmlFor="sEFEmailSomeoneHelped">
-                            ...someone else has helped me get started.&nbsp;</label>
-                        <ButtonGroup name="sEFEmailSomeoneHelped" onChange={handleInputChange} />
+                    <div className="question indent">
+                        <label htmlFor="sefEmailSomeoneHelped">
+                        ...someone else has helped me get started.&nbsp;</label>
+                        <ButtonGroup name="sefEmailSomeoneHelped" onChange={handleInputChange} />
                     </div>
                     
-                    <div className="question">
-                    <label htmlFor="sEFEmailShown">
+                    <div className="question indent">
+                    <label htmlFor="sefEmailShown">
                         ...someone has shown me how to do it first.&nbsp;</label>
-                        <ButtonGroup name="sEFEmailShown" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailShown" onChange={handleInputChange} />
                     </div>
                     
-                    <div className="question">
-                    <label htmlFor="sEFEmailSimilar">
+                    <div className="question indent">
+                    <label htmlFor="sefEmailSimilar">
                         ...I have used similar technology before to do the same task.&nbsp;</label>
-                        <ButtonGroup name="sEFEmailSimilar" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailSimilar" onChange={handleInputChange} />
                     </div>
 
-                    <div className="question">
-                    <label htmlFor="sEFEmailNever">
+                    <div className="question indent">
+                    <label htmlFor="sefEmailNever">
                         ...I have never used anything like it before.&nbsp;</label>
-                        <ButtonGroup name="sEFEmailNever" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailNever" onChange={handleInputChange} />
                     </div>
 
                     <div className="question">
-                    <label htmlFor="sEFEmailConfidence">
+                    <label htmlFor="sefEmailConfidence">
                         <span class="circle">2.</span> &nbsp;
                         I am not confident about my ability to use and learn the selected email program. 
                         I have other strengths.&nbsp;</label>
-
-                        <ButtonGroup name="sEFEmailConfidence" onChange={handleInputChange} />
+                        <ButtonGroup name="sefEmailConfidence" onChange={handleInputChange} />
                      </div>
                      
                      <nav className="proceed">
@@ -109,7 +100,7 @@ function SelfEfficacySurvey(){
             </form>
            </article>
         </>
-    )
-}
+    );
+};
 
 export default SelfEfficacySurvey;

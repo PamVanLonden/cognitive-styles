@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { SurveyContext } from '../utils/SurveyContext';
 import { toTitleCase } from '../utils/Convert';
+import { Link } from 'react-router-dom';
 
 function SurveySummary() {
   const { surveyData } = useContext(SurveyContext);
@@ -14,11 +15,11 @@ function SurveySummary() {
  
    // Define the pages and their corresponding keys.
    const pages = {
-    SelfEfficacy: ['sEFEmailHelp', 'sEFEmailWatched', 'sEFEmailNoOne', 'sEFEmailSomeoneHelped', 'sEFEmailShown', 'sEFEmailSimilar', 'sEFEmailNever', 'sEFEmailConfidence'], 
-    Motivation: ['mSuiteApps', 'mSuiteLookGood', 'mSuiteTester'], 
-    LearningStyle:  ['lsSpreadsheets', 'lsSpreadsheetExplore', 'lsSpreadsheetCustomize'], 
+    SelfEfficacy: ['sefappSelection', 'sefEmailHelp', 'sefEmailWatched', 'sefEmailNoOne', 'sefEmailSomeoneHelped', 'sefEmailShown', 'sefEmailSimilar', 'sefEmailNever', 'sefEmailConfidence'], 
+    Motivation: ['mSuiteApps', 'mSuiteAppsRating', 'mSuiteLookGood', 'mSuiteTester'], 
+    LearningStyle:  ['lsSpreadsheets', 'lsSpreadsheetsRating', 'lsSpreadsheetExplore', 'lsSpreadsheetCustomize'], 
     InformationProcessingStyle: ['ipsGatherInfo', 'ipsResearch', 'ipsUnderstandDirection'], 
-    AttitudeTowardsRisk: ['atrAvoidAdvancedSections', 'atrAvoidDanger', 'atrUseUnproven'] 
+    AttitudeTowardsRisk: ['atrAvoidAdvancedSections', 'atrAvoidAdvancedSectionsRatings', 'atrAvoidDanger', 'atrUseUnproven'] 
   };
 
 // Calculate total for a given page
@@ -26,9 +27,11 @@ const calculatePageTotal = (keys) =>
   keys
     .map(key => {
       const value = surveyData[key];
-      return value !== undefined ? Number(value) : 0; // Convert to number or default to 0
+      // Check if value is a number or can be converted to a number
+      const numericValue = !isNaN(value) ? Number(value) : 0; // Convert valid numeric strings, default others to 0
+      return numericValue;
     })
-    .reduce((sum, value) => (isNaN(value) ? sum : sum + value), 0);
+    .reduce((acc, val) => acc + val, 0); // Sum the values
 
 // Calculate totals for each page
 const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
@@ -41,11 +44,20 @@ const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
 // Calculate the grand total
 const grandTotal = Object.values(pageTotals).reduce((sum, total) => sum + total, 0);
 
+// Extract selected software/hardware values from surveyData
+const { 
+  sefAppSelection, 
+  mSuiteApps, 
+  lsSpreadsheets, 
+  atrAvoidAdvancedSections 
+} = surveyData;
+
   return (
     <>
       <h2>Survey Summary</h2>
 
-       <p>Based on your selections on each of the survey pages, your total score is:</p>
+       <p>Based on your selections on each of the survey pages, 
+        your <strong>total score is: {grandTotal}</strong></p>
        <ol>{/* Display page totals */}
           {Object.entries(pageTotals).map(([page, total]) => (
               <li key={page}>
@@ -53,9 +65,23 @@ const grandTotal = Object.values(pageTotals).reduce((sum, total) => sum + total,
               </li>
             ))}
       </ol>
-      <p>Total Score: {grandTotal}</p> 
+ 
 
-<p></p>
+    
+      <p>Selected choices were 
+        {sefAppSelection || "Not selected"}, 
+        {mSuiteApps || "Not selected"}, 
+        {lsSpreadsheets || "Not selected"}, 
+        {atrAvoidAdvancedSections || "Not selected"}
+      </p>
+   
+      <nav className="proceed">
+              <button >
+                  <Link to="/attitude-risk-survey">&larr; Previous page</Link>
+              </button>
+              <button class="off"></button>
+          </nav>
+
     </>
   );
 }

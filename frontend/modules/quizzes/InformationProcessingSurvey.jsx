@@ -1,25 +1,10 @@
-import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SurveyContext } from '../utils/SurveyContext';
-import ButtonGroup from '../utils/SelectedOptions';
- 
+import ButtonGroup from '../utils/ButtonGroup';
+import { useSurveyForm } from '../utils/useSurveyForm'; // Import the custom hook
 
-function InformationProcessingSurvey(){
-    const { addSurveyData } = useContext(SurveyContext);
-    const [formValues, setFormValues] = useState({
-        // Store the ButtonGroup values
-        ipsGatherInfo: '', 
-        ipsResearch: '',
-        ipsUnderstandDirection: '',
-    });
 
-    const handleInputChange = (name, value) => {
-        setFormValues({ ...formValues, [name]: value });
-    };
-
-    const handleNextPage = () => {
-        addSurveyData(formValues); // Save form values before moving to the next page
-    };
+const InformationProcessingSurvey = () => {
+    const { formValues, handleInputChange, handleNextPage } = useSurveyForm();
 
     return (
         <>

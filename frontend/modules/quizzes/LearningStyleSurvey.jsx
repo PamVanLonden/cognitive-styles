@@ -1,25 +1,9 @@
-import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SurveyContext } from '../utils/SurveyContext';
-import ButtonGroup from '../utils/SelectedOptions';
- 
+import ButtonGroup from '../utils/ButtonGroup';
+import { useSurveyForm } from '../utils/useSurveyForm'; // Import the custom hook
 
-function LearningStyleSurvey(){
-    const { addSurveyData } = useContext(SurveyContext);
-    const [formValues, setFormValues] = useState({
-        // Store the ButtonGroup values
-        lsSpreadsheets: '', 
-        lsSpreadsheetExplore: '',
-        lsSpreadsheetCustomize: '',
-    });
-
-    const handleInputChange = (name, value) => {
-        setFormValues({ ...formValues, [name]: value });
-    };
-
-    const handleNextPage = () => {
-        addSurveyData(formValues); // Save form values before moving to the next page
-    };
+const LearningStyleSurvey = () => {
+    const { formValues, handleInputChange, handleNextPage } = useSurveyForm();
 
     return (
         <>
@@ -29,20 +13,23 @@ function LearningStyleSurvey(){
                 <p>This part of the survey focuses on your style of learning new technology.</p>
             <form id="survey">
                 <fieldset><legend>Learning Style</legend>
- 
-                <div className="question">
-                    <label htmlFor="lsSpreadsheets">
-                        <span class="circle">6.</span> &nbsp;
-                        I enjoy finding the lesser-known features and capabilities of &nbsp;
-                        <select>
-                            <option>Microsoft Excel</option>
-                            <option>Google Sheets</option>
-                            <option>Apple Numbers</option>
-                        </select> {''}.
-                     </label>
+                <div className="question ">
+                        <label htmlFor="lsSpreadsheets"><span class="circle">6.</span> 
+                        I enjoy finding the lesser-known features and capabilities of&nbsp;
+                        <select 
+                            name="lsSpreadsheets" 
+                            value={formValues.lsSpreadsheets || ''} 
+                            onChange={handleInputChange}
+                        >
+                            <option value="">choose...</option>
+                            <option value="Microsoft Excel">Microsoft Excel</option>
+                            <option value="Google Sheets">Google Sheets</option>
+                            <option value="Apple Numbers">Apple Numbers</option>
+                        </select>.
+                    </label>
+                    <ButtonGroup name="lsSpreadsheetsRating" onChange={handleInputChange} />
+                </div>
 
-                    <ButtonGroup name="lsSpreadsheets"  onChange={handleInputChange} />
-                </div> 
 
                 <div className="question">
                     <label htmlFor="lsSpreadsheetExplore">
