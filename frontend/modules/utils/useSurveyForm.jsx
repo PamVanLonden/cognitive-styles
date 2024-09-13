@@ -15,6 +15,9 @@ export const useSurveyForm = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+    
+    // Save the updated form value to the context immediately
+    addSurveyData({ [name]: value }); 
   };
 
   // Save form values to context before navigating to the next page
