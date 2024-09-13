@@ -122,6 +122,9 @@ select {
 #survey .question:nth-child(odd) {
     background-color:whitesmoke;
 }
+/* .indent { 
+    margin-left:4%;
+} */
 #survey label {
     width:500px; 
     float:left;
@@ -138,6 +141,7 @@ select {
     display:block;
     font-size:60%;
 }
+.buttonGroupOff {display:none!important;}
 .buttonGroup button {
     margin: .5% 1% 2% 0;
     border:0;
