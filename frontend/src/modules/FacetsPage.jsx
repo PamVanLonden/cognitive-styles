@@ -39,8 +39,8 @@ const FacetsPage = () => {
               {Object.keys(facet.facetValues).map((valueKey, valueIndex) => {
                 const value = facet.facetValues[valueKey]; // Facet values (taskCompletion, techInterest, etc.)
                 return (
-                  <dl key={valueIndex}>
-                    <dt>{valueKey}</dt>
+                  <dl key={valueIndex} >
+                    <dt>{toTitleCase(valueKey)}</dt>
                     <dd><strong>Description:</strong> {value.description}</dd>
                     <dd><strong>Example:</strong> {value.example}</dd>
                   </dl>
