@@ -68,10 +68,8 @@ function SurveySummary() {
       </article>
 
       <nav className="proceed">
-        <button>
-          <Link to="/attitude-risk-survey">&larr; Previous page</Link>
-        </button>
-        <button className="off"></button>
+        <Link to="/attitude-risk-survey">&larr; Previous page</Link>
+        <Link className="off" />
       </nav>
 
      

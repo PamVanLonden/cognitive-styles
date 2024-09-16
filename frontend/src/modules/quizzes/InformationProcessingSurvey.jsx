@@ -49,10 +49,8 @@ const InformationProcessingSurvey = () => {
 
                     
                 <nav className="proceed">
-                    <button><Link to="/learning-style-survey">&larr; Previous page</Link></button>
-                    <button type="submit" onClick={handleNextPage}>
-                        <Link to="/attitude-risk-survey">Next page &rarr;</Link>
-                    </button>
+                   <Link to="/learning-style-survey">&larr; Previous page</Link> 
+                   <Link to="/attitude-risk-survey" onClick={handleNextPage}>Next page &rarr;</Link>
                 </nav>
                 </fieldset>
             </form>

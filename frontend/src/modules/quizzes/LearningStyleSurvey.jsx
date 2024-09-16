@@ -42,12 +42,9 @@ const LearningStyleSurvey = () => {
                     <ButtonGroup name="lsSpreadsheetCustomize"  onChange={handleInputChange} />
                 </div>
 
-                    
                 <nav className="proceed">
-                    <button><Link to="/motivation-survey">&larr; Previous page</Link></button>
-                    <button type="submit" onClick={handleNextPage}>
-                        <Link to="/info-processing-survey">Next page &rarr;</Link>
-                    </button>
+                   <Link to="/motivation-survey">&larr; Previous page</Link> 
+                   <Link to="/info-processing-survey" onClick={handleNextPage}>Next page &rarr;</Link>
                 </nav>
                 </fieldset>
             </form>

@@ -13,7 +13,7 @@ const AttitudeTowardRiskSurvey = () => {
                 <p>This part of the survey focuses on your attitudes toward risk 
                     when learning new technical skills.</p>
             <form id="survey">
-                <fieldset><legend>Attitudes towards risk</legend>
+                <fieldset><legend>Attitudes Towards Risk</legend>
  
                 <div className="question ">
                     <label htmlFor="atrAvoidAdvancedSections"><span class="circle">6.</span> 
@@ -43,12 +43,9 @@ const AttitudeTowardRiskSurvey = () => {
                     <ButtonGroup name="atrUseUnproven" onChange={handleInputChange} />
                 </div>
 
-                    
                 <nav className="proceed">
-                    <button><Link to="/info-processing-survey">&larr; Previous page</Link></button>
-                    <button type="submit" onClick={handleNextPage}>
-                        <Link to="/survey-summary">Summary &rarr;</Link>
-                    </button>
+                   <Link to="/info-processing-survey">&larr; Previous page</Link>
+                   <Link to="/survey-summary"  onClick={handleNextPage}>Summary &rarr;</Link>
                 </nav>
                 </fieldset>
             </form>

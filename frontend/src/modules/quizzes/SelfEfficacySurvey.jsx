@@ -97,10 +97,8 @@ const SelfEfficacySurvey = () => {
                      </div>
                      
                      <nav className="proceed">
-                        <button class="off"></button>
-                        <button type="submit" onClick={handleNextPage}>
-                            <Link to="/motivation-survey">Next page &rarr;</Link>
-                        </button>
+                        <Link class="off"></Link>
+                        <Link to="/motivation-survey" onClick={handleNextPage}>Next page &rarr;</Link>
                     </nav>
                 </fieldset>
             </form>

@@ -40,12 +40,9 @@ const MotivationSurvey = () => {
                     <ButtonGroup name="mSuiteTester" onChange={handleInputChange} />
                 </div>
 
-                    
                     <nav className="proceed">
-                        <button><Link to="/self-efficacy-survey">&larr; Previous page</Link></button>
-                        <button type="submit" onClick={handleNextPage}>
-                            <Link to="/learning-style-survey">Next page &rarr;</Link>
-                        </button>
+                        <Link to="/self-efficacy-survey">&larr; Previous page</Link> 
+                        <Link to="/learning-style-survey" onClick={handleNextPage}>Next page &rarr;</Link>
                     </nav>
                 </fieldset>
             </form>
