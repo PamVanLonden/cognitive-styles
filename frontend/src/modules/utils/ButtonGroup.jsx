@@ -45,6 +45,7 @@ const ButtonGroup = ({ name }) => {
               value={value}
               className={surveyData[name] === value ? 'selected' : ''}
               onClick={() => handleButtonClick(value)}
+              
             >
               {value}
             </button>
