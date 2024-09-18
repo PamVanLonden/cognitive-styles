@@ -36,12 +36,12 @@ const personas = [
      "privacySecurity": "Not provided",
      "summarySimple": "For gender distribution data on users similar to and different from Tim, see http://gendermag.org",
      "facetScores": {
-      "High Self-Efficacy": ["sefHelpMenu", "sefWatchedSomeone", "sefNoOneHelped", "sefSomeoneHelped", "sefSomeoneShowedMe", "sefUsedSimilar", "sefNeverUsed", "sefNoConfidence"],
+      "High Self-Efficacy": ["sefHelpMenu", "sefWatchedSomeone", "sefNoOneHelped", "sefSomeoneHelped", "sefSomeoneShowedMe", "sefUsedSimilar", "sefNeverUsed"],
       "Motivations: Technology for its own sake": ["mSuiteApps", "mSuiteLookGood", "mSuiteTester"],
       "Learning: Tinkerer": ["lsLesserKnownFeatures", "lsLookAhead", "lsUpdateSettings"],
       "Comprehensive Information Processing": [], // Not applicable
       "Risk Averse": [], // Not applicable
-      "Not Risk Averse": ["atrAvoidAdvancedSections", "atrAvoidDanger", "atrUseUnproven"]
+      "Not Risk Averse": ["atrUseUnproven"]
     } 
   },
     {
