@@ -22,7 +22,7 @@ const personas = [
       },
       "attitudeTowardRisk": {
         "AverseVsTolerant": "Risk-tolerant",
-        "description": "Tim doesn't mind taking risks using features of technology that haven't been proven to work. When they are presented with challenges because they have tried a new way that doesn't work, it doesn't changes their attitude toward technology.",
+        "description": "Tim doesn't mind taking risks using features of technology that haven't been proven to work. When they are presented with challenges because they have tried a new way that doesn't work, it doesn't change their attitude toward technology.",
         },
      "infoProcessingStyle": {
         "comprehensiveVsSelective": "Selective",
@@ -40,8 +40,8 @@ const personas = [
       "Motivations: Technology for its own sake": ["mSuiteApps", "mSuiteLookGood", "mSuiteTester"],
       "Learning: Tinkerer": ["lsLesserKnownFeatures", "lsLookAhead", "lsUpdateSettings"],
       "Comprehensive Information Processing": [], // Not applicable
-      "Risk Averse": [], // Not applicable
-      "Not Risk Averse": ["atrAvoidAdvancedSections", "atrAvoidDanger", "atrUseUnproven"]
+      "Risk-averse": [], // Not applicable
+      "Not Risk-averse": ["atrAvoidAdvancedSections", "atrAvoidDanger", "atrUseUnproven"]
     } 
   },
     {
@@ -63,15 +63,15 @@ const personas = [
       },
       "techSelfEfficacy": {
         "lowVsHigh": "Medium",
-        "description": "Pat has medium computer self-efficacy about doing unfamiliar computing tasks. If problems arise with their technology, they will keep on trying to figure out how to achieve what they have set out to do for quite awhile; Pat doesn't give up right away when computers or technology present a challenge to them.",
+        "description": "Pat has medium computer self-efficacy about doing unfamiliar computing tasks. If problems arise with their technology, they will keep on trying to figure out how to achieve what they have set out to do for quite awhile. Pat doesn't give up right away when computers or technology present a challenge to them.",
       },
       "attitudeTowardRisk": {
         "AverseVsTolerant": "Risk-averse",
-        "description": "Pat is busy, so they rarely have spare time. So Pat is risk averse and worries that they will spend time and not get any benefits from doing so. They prefer to perform tasks using familiar features, because they're more predictable about what they will get from them and how much time they'll take.",
+        "description": "Pat is busy, so they rarely have spare time. So Pat is risk-averse and worries that they will spend time and not get any benefits from doing so. They prefer to perform tasks using familiar features, because they're more predictable about what they will get from them and how much time they'll take.",
       },
       "infoProcessingStyle": {
         "comprehensiveVsSelective": "Comprehensive",
-        "description": "Pat leans towards a comprehensive information processing style when gathering information to problem- solve. So, instead of acting upon the first option that seems promising, Pat will first gather information comprehensively to try to form a complete understanding of the problem before trying to solve it. Thus, Pat's style is \"burst-y\"; first reading a lot, then acting on it in a batch of activity." 
+        "description": "Pat leans towards a comprehensive information processing style when gathering information to problem-solve. So, instead of acting upon the first option that seems promising, Pat will first gather information comprehensively to try to form a complete understanding of the problem before trying to solve it. Thus, Pat's style is \"burst-y\"; first reading a lot, then acting on it in a batch of activity." 
        },
       "learningStyle": {
         "processVsTinkering": "By tinkering",
@@ -85,8 +85,8 @@ const personas = [
         "Motivations: Technology for its own sake": ["mSuiteApps", "mSuiteLookGood"], // Assuming Pat is motivated by tech for enjoyment
         "Learning: Tinkerer": ["lsLesserKnownFeatures", "lsLookAhead"], // Assuming Pat enjoys tinkering
         "Comprehensive Information Processing": ["ipsGatherInfo", "ipsResearch"], // Assuming Pat engages in comprehensive processing
-        "Risk Averse": ["atrAvoidDanger"], // Assuming Pat is risk-averse
-        "Not Risk Averse": [] // No traits for not being risk-averse
+        "Risk-averse": ["atrAvoidDanger"], // Assuming Pat is risk-averse
+        "Not Risk-averse": [] // No traits for not being risk-averse
       } 
     },
     
@@ -113,7 +113,7 @@ const personas = [
         },
         "attitudeTowardRisk": {
         "AverseVsTolerant": "Risk-averse",
-        "description": "Abi's life is a little complicated and they rarely have spare time. So they are risk averse about using unfamiliar technologies that might need them to spend extra time on, even if the new features might be relevant. They instead performs tasks using familiar features, because they're more predictable about what they will get from them and how much time they will take.",
+        "description": "Abi's life is a little complicated and they rarely have spare time. So they are risk-averse about using unfamiliar technologies that might need them to spend extra time on, even if the new features might be relevant. They instead performs tasks using familiar features, because they're more predictable about what they will get from them and how much time they will take.",
       },
       "infoProcessingStyle": {
         "comprehensiveVsSelective": "Comprehensive",
@@ -131,8 +131,8 @@ const personas = [
         "Motivations: Technology for its own sake": [], // Abi is not motivated by tech for its own sake
         "Learning: Tinkerer": [], // Abi does not fit the tinkerer learning style
         "Comprehensive Information Processing": ["ipsGatherInfo", "ipsResearch", "ipsUnderstandDirection"], // Abi is comprehensive in information processing
-        "Risk Averse": ["atrAvoidAdvancedSections", "atrAvoidDanger"], // Abi is risk-averse
-        "Not Risk Averse": [] // No traits for not being risk-averse
+        "Risk-averse": ["atrAvoidAdvancedSections", "atrAvoidDanger"], // Abi is risk-averse
+        "Not Risk-averse": [] // No traits for not being risk-averse
       }
     },
 
@@ -177,8 +177,8 @@ const personas = [
           "Motivations: Technology for its own sake": [],  
           "Learning: Tinkerer": [],  
           "Comprehensive Information Processing": [],  
-          "Risk Averse": [],  
-          "Not Risk Averse": []  
+          "Risk-averse": [],  
+          "Not Risk-averse": []  
         }
       },
 
