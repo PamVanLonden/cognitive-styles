@@ -2,6 +2,8 @@
 // Determines the closest persona based on the total score
 import personas from '../data/personasObject-2';  
 
+
+
 // Determines if score is Tim-like, Abi-like, or Pat-like
 export const determineTag = (score) => {
     if (score <= 4) return 'Tim-like';      // Agreeing with statements (closer to 1-4)
