@@ -1,4 +1,4 @@
-import  personas  from './data/personasObject';
+import  personas  from './data/personasObject-2';
 
 const PersonasPage = () => {
     return (
