@@ -1,0 +1,268 @@
+/* Noto serif and sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* color vars */
+
+/* Page layout */
+body {
+    background-color:whitesmoke; /* or a light version of an OSU color */
+    font-family: 'Noto Serif', serif;
+    font-size:1.1em;
+    margin:0 auto;
+    max-width:900px;
+    min-width:600px;
+}
+
+/* Anchors and Nav */
+a:link {color:black;}
+a:visited {color:gray;}
+nav {display:flex; flex-flow:wrap row; background-color:rgb(58, 154, 198); border-radius:0 0 5px 5px;  }
+nav a {padding:1% 2%; border-right:3px solid white; color:white; font-size:.9em; text-decoration:none;}
+nav a:visited {color:white;}
+nav a:hover {background-color:white; color:gray;}
+
+header, footer {
+    color:white;
+    background-color:rgb(224, 137, 6);
+    padding:1%;
+    border-radius:0;
+    text-align:left;
+}
+header h1 {
+    font-size:150%;
+
+    }
+header img {
+    height:80px;
+    margin: 3% 2% 0 2%;
+    float:left;
+    }
+footer {border-radius:5px 5px 0 0; }
+footer li {
+    display:inline;     
+    font-family:"Noto Sans", sans-serif;
+}
+footer a:link, footer a:visited {color:white;}
+main {
+    min-height:600px;
+    min-width:400px;
+    padding:0 2%;
+}
+
+.proceed {
+    background-color:transparent;
+    justify-content: space-between;
+    margin:3%;
+    width:95%;
+}
+.proceed > a {
+    font-size:100%;
+    color:white;
+    background-color:rgb(58, 154, 198);
+    border:0;
+    border-radius:5px;
+    margin-top:3%;
+    padding:1.2%;
+    width:180px;
+    text-decoration:none;
+    font-family:"Noto Sans", sans-serif;
+    text-align:center;
+}
+.proceed > a:hover, 
+.proceed > a:hover {color:white; background-color:rgb(68, 178, 68);}
+.proceed > a.off {background-color:transparent;}
+
+.floatRight {
+    float:right; 
+    margin:0 0 2% 2%; 
+    border:1px solid orange;
+    padding:2%;
+    width:34%;
+}
+img {max-width:100%;}
+cite {font-size:80%;}
+footer cite a, footer cite a:visited {color:white;}
+h1, h2, h3, h4, dt {text-transform:capitalize; }
+h2 {color: rgb(58, 154, 198);}
+h3 {line-height:1;}
+dt {color:#C34500;}
+.smaller {font-size:60%;}
+
+.circle {
+    border-radius:50%;
+    padding:8px;
+    color:white;
+    background-color:orange;
+    font-family:"Noto Sans", sans-serif;
+    font-weight:bold;
+    font-size:90%;
+    float:left;
+    margin-right:1%;
+    width:20px;
+    text-align:center;
+}
+
+/* Forms */
+form {
+    display:flex; 
+    flex-flow:column; 
+}
+fieldset {
+    width:97%;
+    margin:0 3% 3% 0; 
+    border:2px solid #cc5500; 
+    border-radius:10px;
+    background-color:white;
+}
+legend {
+    background-color:#cc5500;
+    font-weight:bold; 
+    font-size:120%;
+    color:white;
+    padding:2%;
+    margin-bottom:3%;
+    text-align:left;
+    border-radius:5px;
+}
+fieldset p {
+    margin:-20px 0 50px 0; 
+    font-weight:400;
+    padding-top:2%;
+}
+
+label, input, textarea, select {
+    font-family: inherit;
+}
+select {
+    font-size: 100%;
+    margin-bottom:4%;
+    color:#C34500;
+    border:3px solid gray;
+    border-radius:5px;
+    padding:.7%;
+}
+#survey .question:nth-child(odd) {
+    background-color:whitesmoke;
+}
+.indent { 
+    margin-left:2%;
+}
+.question { /* perfectly vertically and horizontally aligned! */
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+#survey label {
+    width:400px;
+    font-size:90%;
+}
+
+.scale:before {
+    content: "Agree---------------------------------------------------------------- Disagree";
+    display:block;
+    font-size:60%;
+    width:300px;
+ 
+}
+.buttonGroup {margin-top:4%;}
+.buttonGroup button {
+    margin: 1% 2.5% 2% 0;
+    border:0;
+    padding:1% 1.2%;
+    box-shadow:1px 1px gray;
+    border-radius:2px;
+    width:25px;
+    
+}
+.buttonGroup button:hover {
+    color:white; 
+    background:orange;
+    border:0;
+}
+.buttonGroup button.selected {
+    color:white; 
+    background:orange;
+    border:0;
+}
+
+
+
+/* card gallery */
+.card {	  
+display: flex;
+flex-flow: row wrap; 
+}
+.card figure { /* design each set */
+    background-color:white;
+    border:1px solid rgb(174, 99, 36);
+    border-radius:5px;
+    box-shadow:2px 2px 10px rgb(195, 194, 194);
+    margin:0 2.5% 2.5% 0;
+    padding:2%;
+    min-width:30%;
+    max-width: 42.99%; 
+    min-height:auto;
+    max-height:600px;
+    vertical-align:top;
+    overflow:scroll;
+}
+.card h3 {
+    text-align:center;
+    font-weight:bold; 
+    color:#C34500;
+    font-size:130%; 
+    padding:0 2%;
+    margin-top:0;
+}
+
+.card figcaption {padding:0 2%; font-size:80%;}
+.card img {
+width: 100%;
+height: auto;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+}
+
+/* Summary using range with score */
+.persona-comparison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:4% auto;
+}
+.persona-comparison h3 {
+    margin-bottom:0;
+    color:#C34500;
+    z-index:999;
+}
+.comparison-bar {
+    display: flex;
+    align-items: center;
+    /* align-content: center; */
+    justify-content: space-between;
+    position: relative;
+    width: 80%;
+    height: 100px;
+    background-color: #f0f0f0;  
+    margin:3% 0;
+    overflow: visible;
+    margin:0; padding:0;
+}
+
+.persona-image {
+    width: 80px;
+    height:80px;
+    object-fit: cover;
+}
+
+.score-marker {
+    position: absolute;
+    font-size: 2rem;
+    color: orange;
+    transform: translate-x(-50%); 
+    white-space: nowrap;
+}
+  

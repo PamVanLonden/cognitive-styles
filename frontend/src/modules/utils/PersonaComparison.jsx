@@ -1,0 +1,38 @@
+/* As per Margaret
+
+Self-Eff: Tim-pic —— O ———————— — Abi-pic
+Motivations: Tim-pic. ————— O —————— Abi-pic.
+Learning Style: Tim-pic —— O ———————— — Abi-pic
+Information Processing: Tim-pic —— O ———————— — Abi-pic
+Attitude Risk: Tim-pic —————————— — O - Abi-pic
+
+*/
+
+const PersonaComparison = ({ facet, score, timImage, abiImage, keys, surveyData }) => {
+  console.log(`Facet: ${facet}, Score: ${score}`); // Debugging
+
+  const scorePosition = (score) => {
+    console.log(`Score: ${score}`); // Debugging
+    const clampedScore = Math.max(1, Math.min(score, 9));
+    const position = ((clampedScore - 1) / 8) * 100;
+    console.log(`Position: ${position}%`);
+    return `${position}%`;
+  };
+
+    // const testScore = 5; // Try a known score value
+    // console.log(scorePosition(testScore)); // Check the output
+
+    return (
+      <div className="persona-comparison">
+        <h3>{facet}</h3>
+        <p className="comparison-bar" >
+            <img src={timImage} alt="Tim" className="persona-image tim" />
+              <span className="score-marker" style={{ left: scorePosition(score) }}>O</span>
+            <img src={abiImage} alt="Abi" className="persona-image abi" />
+        </p>
+
+      </div>
+    );
+  };
+  
+  export default PersonaComparison;
