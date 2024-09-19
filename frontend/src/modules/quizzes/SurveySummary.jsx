@@ -43,10 +43,10 @@ function SurveySummary() {
   // Extract Tim and Abi's images from personaObject
   const timPersona = personas.find(persona => persona.names.includes("Tim"));
   const abiPersona = personas.find(persona => persona.names.includes("Abi"));
-  
+  const patPersona = personas.find(persona => persona.names.includes("Pat"));
   const timImage = timPersona?.portrait;
   const abiImage = abiPersona?.portrait;
-
+  const patImage = patPersona?.portrait;
 
   // Define the pages and their corresponding keys for the Likert scales.
   const pages = {
@@ -80,17 +80,6 @@ const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
 }, {});
 
 
-  // const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
-  //   if (!page || !keys) {
-  //     console.error("Invalid page or keys:", { page, keys });
-  //     return totals;
-  //   }
-    
-  // const total = calculatePageTotal(keys, surveyData);
-  //   console.log(`Total for ${page}:`, total);  // Logging page and total
-    
-
-
     // Calculate the grand total
     const grandTotal = Object.values(pageTotals).reduce((sum, total) => sum + total, 0);
 
@@ -122,6 +111,7 @@ const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
               score={total}  // Use the reversed or normal total
               timImage={timImage}
               abiImage={abiImage}
+              patImage={patImage}
               surveyData={surveyData} // Include surveyData for debugging if needed
             />
             );
