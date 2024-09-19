@@ -10,7 +10,8 @@ body {
     font-size:1.1em;
     margin:0 auto;
     max-width:900px;
-    min-width:600px;
+    min-width:417px;
+
 }
 
 /* Anchors and Nav */
@@ -193,7 +194,10 @@ select {
 /* card gallery */
 .card {	  
 display: flex;
-flex-flow: row wrap; 
+flex-flow: row wrap;
+align-items: stretch;
+/* justify-content: space-between;  */
+/* align-items: flex-start; */
 }
 .card figure { /* design each set */
     background-color:white;
@@ -202,13 +206,13 @@ flex-flow: row wrap;
     box-shadow:2px 2px 10px rgb(195, 194, 194);
     margin:0 2.5% 2.5% 0;
     padding:2%;
-    min-width:30%;
-    max-width: 42.99%; 
     min-height:auto;
     max-height:600px;
     vertical-align:top;
     overflow:scroll;
+    transition: transform 0.3s ease;
 }
+
 .card h3 {
     text-align:center;
     font-weight:bold; 
@@ -234,40 +238,53 @@ border-top-right-radius:5px;
   margin:4% auto;
 }
 .persona-comparison h3 {
-    margin-bottom:0;
+    margin-bottom:7%;
     color:#C34500;
     z-index:999;
 }
+
 .comparison-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    width: 80%;
-    height: 100px;
-    background-color: #f0f0f0;
-    margin: 0 0 3% 0;
+    width: 99%;
+    height: 5px;
+    margin: 0 0 8% 0;
     padding: 0;
+    background: linear-gradient(180deg, #cbc5c5 58%, #D4D4D4 58%);/* W3C */
+
   }
 
 .persona-image {
-    width: 80px;
-    height:80px;
+    width: 85px;
+    height:85px;
     object-fit: cover;
 }
-
+.grayed {
+    opacity:30%;
+}
 .score-marker {
     position: absolute;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     transform: translate-x(-50%); 
     white-space: nowrap;
     border-radius: 50%;
     background-color:orange;
-    padding:1.5%;
-    width:35px;
-    height:35px;
+    padding:1.5% 1.5% 1% 1.5%;
+    width:30px;
+    height:30px;
     line-height:1; vertical-align:middle;
     text-align:center;
 }
   
+/* media queries */
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 777px) {
+    .card figure {  
+        min-width:30%;
+        max-width: 42.99%; 
+    }
+}
