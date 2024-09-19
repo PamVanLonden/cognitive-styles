@@ -4,7 +4,7 @@ import { useSurveyForm }  from '../utils/useSurveyForm';
 import { toTitleCase }    from '../utils/Convert';
 import { determinePersona, calculatePageTotal } from '../utils/surveyScore';
 import  PersonaComparison  from '../utils/PersonaComparison';
-import  personas  from '../data/personasObject';
+import  personas  from '../data/personasObject-2';
 
 import { Link } from 'react-router-dom';
 import { useNavigation } from '../utils/NavigationContext';
@@ -47,11 +47,23 @@ function SurveySummary() {
 
 
   // Calculate totals for each page
-  const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
-    const total = calculatePageTotal(keys, surveyData);
-    console.log(`Total for ${page}:`, total);
-    totals[page] = total;
+//   const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
+//     const total = calculatePageTotal(keys, surveyData);
+//     console.log(`Total for ${page}:`, total);
+//     totals[page] = total;
+//     return totals;
+// }, {});
+const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
+  if (!page || !keys) {
+    console.error("Invalid page or keys:", { page, keys });
     return totals;
+  }
+  
+const total = calculatePageTotal(keys, surveyData);
+  console.log(`Total for ${page}:`, total);  // Logging page and total
+  
+  totals[page] = total;
+  return totals;
 }, {});
 
 
@@ -63,6 +75,19 @@ function SurveySummary() {
     markSummaryAsVisited();
   }, [markSummaryAsVisited]);
   
+// Error checking for personaComparison
+  // console.log('Survey Data Keys:', Object.keys(surveyData));
+  //     Object.entries(pages).forEach(([page, keys]) => {
+  //       keys.forEach(key => {
+  //         console.log(`${key}:`, surveyData[key]);
+  //       });
+  //     });
+
+  // console.log(`Total for ${pages}:`, total);
+  //     const persona = determinePersona(total, surveyData);
+  //     console.log(`Persona for ${pages}:`, persona);
+
+
   return (
     <>
       <h2>Survey Summary</h2>
@@ -70,6 +95,9 @@ function SurveySummary() {
       <p>Based on your selections on each of the survey pages, 
         your <strong>total score is: {grandTotal}</strong>. 
         Here is how your scores compare to the personas:</p>
+
+        
+
 
         {/* <div className="survey-summary">
           {Object.entries(pages).map(([page, keys]) => (
@@ -85,19 +113,20 @@ function SurveySummary() {
 
         <div className="survey-summary">
         {Object.entries(pageTotals).map(([page, total]) => {
-              const persona = determinePersona(total, surveyData); // This will now return the full persona object
+            const persona = determinePersona(total, surveyData); // This will now return the full persona object
 
-            if (!persona) {
-              return null; // Skip rendering if no persona is found
+            if (!persona || !page || !total) {
+              return null; // Skip rendering if persona, page, or total is missing
             }
 
             return (
-            <PersonaComparison
+              <PersonaComparison
               key={page}
               facet={toTitleCase(page)}
               score={total}
               timImage={timImage}
               abiImage={abiImage}
+              surveyData={surveyData} // Include surveyData for debugging if needed
             />
             );
           })}
