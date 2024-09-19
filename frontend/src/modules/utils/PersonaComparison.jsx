@@ -8,7 +8,7 @@ Attitude Risk: Tim-pic —————————— — O - Abi-pic
 
 */
 
-const PersonaComparison = ({ facet, score, timImage, abiImage }) => {
+const PersonaComparison = ({ facet, score, timImage, abiImage, patImage }) => {
   console.log(`Facet: ${facet}, Score: ${score}`); // Debugging
 
   const scorePosition = (score) => {
@@ -26,9 +26,10 @@ const PersonaComparison = ({ facet, score, timImage, abiImage }) => {
       <div className="persona-comparison">
         <h3>{facet}</h3>
         <p className="comparison-bar" >
-            <img src={timImage} alt="Tim" className="persona-image tim" />
+            <img src={timImage} alt="Tim, Timara, Timothy"  title="Tim, Timara, Timothy" className="persona-image tim" />
             <span className="score-marker" style={{ left: scorePosition(score) }}>{score}</span>
-            <img src={abiImage} alt="Abi" className="persona-image abi" />
+            <img src={patImage} alt="Pat, Patricia, Patrick" title="Pat, Patricia, Patrick" className="persona-image pat grayed" />
+            <img src={abiImage} alt="Abi, Abigail, Abishek"  title="Abi, Abigail, Abishek"  className="persona-image abi" />
         </p>
 
       </div>
