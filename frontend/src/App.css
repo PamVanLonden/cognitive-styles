@@ -262,7 +262,7 @@ border-top-right-radius:5px;
     object-fit: cover;
 }
 .grayed {
-    opacity:30%;
+    transform: opacity 30%;
 }
 .score-marker {
     position: absolute;
@@ -277,7 +277,6 @@ border-top-right-radius:5px;
     height:30px;
     line-height:1; vertical-align:middle;
     text-align:center;
-    opacity:100%!important;
 }
   
 /* media queries */
