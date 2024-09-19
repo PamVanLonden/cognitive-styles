@@ -27,7 +27,7 @@ const PersonaComparison = ({ facet, score, timImage, abiImage, keys, surveyData 
         <h3>{facet}</h3>
         <p className="comparison-bar" >
             <img src={timImage} alt="Tim" className="persona-image tim" />
-              <span className="score-marker" style={{ left: scorePosition(score) }}>O</span>
+              <span className="score-marker" style={{ left: scorePosition(score) }}>{score}</span>
             <img src={abiImage} alt="Abi" className="persona-image abi" />
         </p>
 

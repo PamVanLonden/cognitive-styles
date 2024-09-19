@@ -1,9 +1,6 @@
-// TO ADD:
-// if some questions need numbers reversed, incorporate reverse util.
-
 
 // Determines the closest persona based on the total score
-import personas from '../data/personasObject';  
+import personas from '../data/personasObject-2';  
 
 // Determines if score is Tim-like, Abi-like, or Pat-like
 export const determineTag = (score) => {
