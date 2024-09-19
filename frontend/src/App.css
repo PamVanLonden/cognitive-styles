@@ -241,16 +241,14 @@ border-top-right-radius:5px;
 .comparison-bar {
     display: flex;
     align-items: center;
-    /* align-content: center; */
     justify-content: space-between;
     position: relative;
-    width: 80%;
+    width: 90%;
     height: 100px;
-    background-color: #f0f0f0;  
-    margin:3% 0;
-    overflow: visible;
-    margin:0; padding:0;
-}
+    background-color: #f0f0f0;
+    margin: 0 0 3% 0;
+    padding: 0;
+  }
 
 .persona-image {
     width: 80px;
@@ -261,8 +259,15 @@ border-top-right-radius:5px;
 .score-marker {
     position: absolute;
     font-size: 2rem;
-    color: orange;
+    color: white;
     transform: translate-x(-50%); 
     white-space: nowrap;
+    border-radius: 50%;
+    background-color:orange;
+    padding:1.5%;
+    width:35px;
+    height:35px;
+    line-height:1; vertical-align:middle;
+    text-align:center;
 }
   
