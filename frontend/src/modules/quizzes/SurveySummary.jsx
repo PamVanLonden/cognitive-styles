@@ -9,6 +9,18 @@ import  personas  from '../data/personasObject-2';
 import { Link } from 'react-router-dom';
 import { useNavigation } from '../utils/NavigationContext';
 
+// List of question names where reversal should happen
+const questionsToReverse = [
+  'sefNoConfidence', // 2
+  'ipsResearch',     // 9
+  'ipsUnderstandDirection', // 10
+  'atrAvoidAdvancedSections', // 11
+  'atrAvoidDanger',  // 12
+  'atrUseUnproven',  // 13
+];
+
+// Function to reverse the value (calculate tens' complement)
+const getReversedValue = (value) => 10 - value;
 
 function SurveySummary() {
     //Conditional navigation to summary page:
@@ -19,7 +31,7 @@ function SurveySummary() {
     const { surveyData } = useContext(SurveyContext);
       console.log('Survey Data:', surveyData);
 
-    // Access the selet options chosen from techOptions
+    // Access the select options chosen from techOptions
     const { formValues } = useSurveyForm(); 
 
       
@@ -38,55 +50,54 @@ function SurveySummary() {
 
   // Define the pages and their corresponding keys for the Likert scales.
   const pages = {
-    SelfEfficacy: ['sefHelpMenu', 'sefWatchedSomeone', 'sefNoOneHelped', 'sefSomeoneHelped', 'sefSomeoneShowedMe', 'sefUsedSimilar', 'sefNeverUsed', 'sefNoConfidence'], 
-    Motivation: ['mSuiteApps', 'mSuiteLookGood', 'mSuiteTester'], 
-    LearningStyle:  ['lsLesserKnownFeatures', 'lsLookAhead', 'lsUpdateSettings'], 
-    InformationProcessingStyle: ['ipsGatherInfo', 'ipsResearch', 'ipsUnderstandDirection'], 
-    AttitudeTowardsRisk: ['atrAvoidAdvancedSections', 'atrAvoidDanger', 'atrUseUnproven'] 
-  };
+      SelfEfficacy: ['sefHelpMenu', 'sefWatchedSomeone', 'sefNoOneHelped', 'sefSomeoneHelped', 'sefSomeoneShowedMe', 'sefUsedSimilar', 'sefNeverUsed', 'sefNoConfidence'], 
+      Motivation: ['mSuiteApps', 'mSuiteLookGood', 'mSuiteTester'], 
+      LearningStyle:  ['lsLesserKnownFeatures', 'lsLookAhead', 'lsUpdateSettings'], 
+      InformationProcessingStyle: ['ipsGatherInfo', 'ipsResearch', 'ipsUnderstandDirection'], 
+      AttitudeTowardsRisk: ['atrAvoidAdvancedSections', 'atrAvoidDanger', 'atrUseUnproven'] 
+    };
 
-
-  // Calculate totals for each page
-//   const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
-//     const total = calculatePageTotal(keys, surveyData);
-//     console.log(`Total for ${page}:`, total);
-//     totals[page] = total;
-//     return totals;
-// }, {});
+// Adjust totals by applying the reversal logic
 const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
   if (!page || !keys) {
     console.error("Invalid page or keys:", { page, keys });
     return totals;
   }
-  
-const total = calculatePageTotal(keys, surveyData);
+
+  // Calculate total for the current page, applying reversal where necessary
+  const total = keys.reduce((sum, key) => {
+    let value = surveyData[key] || 0; // Default to 0 if no value found
+    if (questionsToReverse.includes(key)) {
+      value = getReversedValue(value); // Reverse the value if it's in the reversal list
+    }
+    return sum + value;
+  }, 0);
+
   console.log(`Total for ${page}:`, total);  // Logging page and total
-  
+
   totals[page] = total;
   return totals;
 }, {});
 
 
-  // Calculate the grand total
-  const grandTotal = Object.values(pageTotals).reduce((sum, total) => sum + total, 0);
+  // const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
+  //   if (!page || !keys) {
+  //     console.error("Invalid page or keys:", { page, keys });
+  //     return totals;
+  //   }
+    
+  // const total = calculatePageTotal(keys, surveyData);
+  //   console.log(`Total for ${page}:`, total);  // Logging page and total
+    
 
 
-  useEffect(() => {
-    markSummaryAsVisited();
-  }, [markSummaryAsVisited]);
-  
-// Error checking for personaComparison
-  // console.log('Survey Data Keys:', Object.keys(surveyData));
-  //     Object.entries(pages).forEach(([page, keys]) => {
-  //       keys.forEach(key => {
-  //         console.log(`${key}:`, surveyData[key]);
-  //       });
-  //     });
+    // Calculate the grand total
+    const grandTotal = Object.values(pageTotals).reduce((sum, total) => sum + total, 0);
 
-  // console.log(`Total for ${pages}:`, total);
-  //     const persona = determinePersona(total, surveyData);
-  //     console.log(`Persona for ${pages}:`, persona);
 
+    useEffect(() => {
+      markSummaryAsVisited();
+    }, [markSummaryAsVisited]);
 
   return (
     <>
@@ -95,21 +106,6 @@ const total = calculatePageTotal(keys, surveyData);
       <p>Based on your selections on each of the survey pages, 
         your <strong>total score is: {grandTotal}</strong>. 
         Here is how your scores compare to the personas:</p>
-
-        
-
-
-        {/* <div className="survey-summary">
-          {Object.entries(pages).map(([page, keys]) => (
-            <PersonaComparison
-              key={page}
-              facet={toTitleCase(page)}
-              score={pageTotals[page]}
-              timImage={timImage}
-              abiImage={abiImage}
-            />
-          ))}
-        </div> */}
 
         <div className="survey-summary">
         {Object.entries(pageTotals).map(([page, total]) => {
@@ -123,7 +119,7 @@ const total = calculatePageTotal(keys, surveyData);
               <PersonaComparison
               key={page}
               facet={toTitleCase(page)}
-              score={total}
+              score={total}  // Use the reversed or normal total
               timImage={timImage}
               abiImage={abiImage}
               surveyData={surveyData} // Include surveyData for debugging if needed
@@ -132,26 +128,8 @@ const total = calculatePageTotal(keys, surveyData);
           })}
         </div> 
 
+        
 
-        <div className="card">
-            {Object.entries(pageTotals).map(([page, total]) => {
-              const persona = determinePersona(total, surveyData); // This will now return the full persona object
-
-            if (!persona) {
-              return null; // Skip rendering if no persona is found
-            }
-
-            return (
-              <figure key={page}>
-                <h3>{toTitleCase(page)}</h3>
-                <figcaption>
-                  When using <strong>{formValues.techOptions || '...'}</strong>, your {toTitleCase(page)} <strong>score is {total}</strong>, which suggests your related persona is like&nbsp;<strong>{persona.names}</strong>.
-                </figcaption>
-                <img src={persona.portrait} alt={persona.names} title={persona.names} />
-              </figure>
-            );
-          })}
-        </div>
       </article>
 
       <nav className="proceed">
