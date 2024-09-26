@@ -12,8 +12,8 @@ const pageAvg = {
 
 // Determines if score is Tim-like, Abi-like, or Pat-like
 export const determineTag = (score) => {
-    if (score <= pageAvg[facet]) return 'Tim-like';    // Agreeing with statements (closer to 1-4)
-    if (score >= pageAvg[facet]+1) return 'Abi-like';  // Disagreeing (closer to 6-9)
+    if (score <= pageAvg[facet]) return 'Abi-like';    // Disagreeing with statements (closer to 1-4)
+    if (score >= pageAvg[facet]+1) return 'Tim-like';  // Agreeing (closer to 6-9)
     return 'Pat-like';                                 // Neutral response in the middle
 };
 
