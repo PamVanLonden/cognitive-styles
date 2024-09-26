@@ -35,8 +35,8 @@ const SelfEfficacySurvey = () => {
  
                     <div className="question ">
                       <label htmlFor="sefHelpMenu"> <span className="circle">1.</span>
-                        I am able to use {formValues.techOptions || '...'}&nbsp;
-                        when I have just the built-in "Help" menu for assistance. 
+                        I am able to use {formValues.techOptions || '...'}&nbsp;when 
+                        I have just the built-in "Help" menu for assistance. 
                         </label>
                         <ButtonGroup name="sefHelpMenu" onChange={handleInputChange} />
                     </div>
