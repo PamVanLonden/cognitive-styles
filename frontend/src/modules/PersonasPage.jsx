@@ -1,6 +1,9 @@
-import  personas  from './data/personasObject-2';
+import  personas  from './data/personasObject';
+import { Link } from 'react-router-dom';
+import { useSurveyForm } from './utils/useSurveyForm'; // Import the custom hook
 
 const PersonasPage = () => {
+    const { handleNextPage } = useSurveyForm();
     return (
         <>
             <h2>The Personas</h2>
@@ -29,6 +32,11 @@ const PersonasPage = () => {
                         </figcaption>
                     </figure>
                  ))}
+
+                <nav className="proceed">
+                   <Link to="/" onClick={handleNextPage} >&larr; Home</Link>
+                   <Link to="/facetsPage"   onClick={handleNextPage}>Facets &rarr;</Link>
+                </nav>
             </article>
         </>
     )

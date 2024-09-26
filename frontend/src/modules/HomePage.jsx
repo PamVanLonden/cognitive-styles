@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom';
+import { useSurveyForm } from './utils/useSurveyForm'; 
+
 function HomePage(){
+    const { handleNextPage } = useSurveyForm();
     return (
         <>
            <h2>Welcome!</h2>
@@ -28,6 +32,11 @@ function HomePage(){
 
                 <p>Below is a diagram of how the Personas and Facets relate:</p>
                 <img src="./images/persona-scale-faces.png" alt="Diagram of how the Personas and Facets relate." title="" />
+
+                <nav className="proceed">
+                   <Link className="off"></Link>
+                   <Link to="/personasPage"  onClick={handleNextPage}>Personas &rarr;</Link>
+                </nav>
 
             </article>
         </>

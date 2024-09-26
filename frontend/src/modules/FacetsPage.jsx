@@ -1,7 +1,12 @@
 import  facets  from './data/facetsObject';
 import { toTitleCase } from './utils/Convert';
+import { Link } from 'react-router-dom';
+import { useSurveyForm } from './utils/useSurveyForm'; 
+
 
 const FacetsPage = () => {
+  const { handleNextPage } = useSurveyForm();
+
     const facetDefinitions = facets[0].facetDefinitions;
 
     return (
@@ -51,6 +56,11 @@ const FacetsPage = () => {
           );
         })}
            </div>
+
+           <nav className="proceed">
+                <Link to="/personasPage" onClick={handleNextPage} >&larr; Personas</Link>
+                <Link to="/self-efficacy-survey"   onClick={handleNextPage}>Survey &rarr;</Link>
+            </nav>
            </article>
       </>
     );
