@@ -16,7 +16,7 @@ const AttitudeTowardRiskSurvey = () => {
                 <fieldset><legend>Attitudes Towards Risk</legend>
  
                 <div className="question ">
-                    <label htmlFor="atrAvoidAdvancedSections"><span className="circle">6.</span> 
+                    <label htmlFor="atrAvoidAdvancedSections"><span className="circle">12.</span> 
                     I avoid "advanced" buttons or sections in&nbsp;
                     {formValues.techOptions || '...'}.
                     </label>
@@ -36,8 +36,8 @@ const AttitudeTowardRiskSurvey = () => {
                     <label htmlFor="atrUseUnproven">
                         <span className="circle">14.</span> 
                         Despite the risks, I use features in&nbsp;
-                        {formValues.techOptions || '...'}&nbsp;
-                        that haven't been proven to work.
+                        {formValues.techOptions || '...'}&nbsp;that 
+                        haven't been proven to work.
                      </label>
 
                     <ButtonGroup name="atrUseUnproven" onChange={handleInputChange} />

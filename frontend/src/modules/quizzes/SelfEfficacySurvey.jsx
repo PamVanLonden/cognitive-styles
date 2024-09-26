@@ -43,8 +43,8 @@ const SelfEfficacySurvey = () => {
                     
                     <div className="question indent">
                         <label htmlFor="sefWatchedSomeone">
-                            I can use  {formValues.techOptions || '...'}&nbsp;
-                            when I have seen someone else using it, 
+                            I can use  {formValues.techOptions || '...'}&nbsp;when 
+                            I have seen someone else using it, 
                             before trying it myself. 
                         </label>
                         <ButtonGroup name="sefWatchedSomeone" onChange={handleInputChange} />
@@ -52,43 +52,43 @@ const SelfEfficacySurvey = () => {
                     
                     <div className="question indent">
                     <label htmlFor="sefNoOneHelped">
-                        I can use  {formValues.techOptions || '...'}&nbsp;
-                        when no one is around to help me. </label>
+                        I can use  {formValues.techOptions || '...'}&nbsp;when 
+                        no one is around to help me. </label>
                         <ButtonGroup name="sefNoOneHelped" onChange={handleInputChange} />
                     </div>
                     
                     <div className="question indent">
                         <label htmlFor="sefSomeoneHelped">
-                        I can use  {formValues.techOptions || '...'}&nbsp;
-                        when someone else has helped me get started. </label>
+                        I can use  {formValues.techOptions || '...'}&nbsp;when 
+                        someone else has helped me get started. </label>
                         <ButtonGroup name="sefSomeoneHelped" onChange={handleInputChange} />
                     </div>
                     
                     <div className="question indent">
                     <label htmlFor="sefSomeoneShowedMe">
-                        I can use  {formValues.techOptions || '...'}&nbsp;
-                        when someone has shown me how to do it first. </label>
+                        I can use  {formValues.techOptions || '...'}&nbsp;when 
+                        someone has shown me how to do it first. </label>
                         <ButtonGroup name="sefSomeoneShowedMe" onChange={handleInputChange} />
                     </div>
                     
                     <div className="question indent">
                     <label htmlFor="sefUsedSimilar">
-                        I can use  {formValues.techOptions || '...'}&nbsp;
-                        because I have used similar technology before to do the same task. </label>
+                        I can use  {formValues.techOptions || '...'}&nbsp;because 
+                        I have used similar technology before to do the same task. </label>
                         <ButtonGroup name="sefUsedSimilar" onChange={handleInputChange} />
                     </div>
 
                     <div className="question indent">
                     <label htmlFor="sefNeverUsed">
-                        I am confident I can use  {formValues.techOptions || '...'}&nbsp;
-                        even though I have never used anything like it before. </label>
+                        I am confident I can use  {formValues.techOptions || '...'}&nbsp;even 
+                        though I have never used anything like it before. </label>
                         <ButtonGroup name="sefNeverUsed" onChange={handleInputChange} />
                     </div>
 
                     <div className="question">
                     <label htmlFor="sefNoConfidence">
                         <span className="circle">2.</span> &nbsp;
-                        I am not confident about my ability to use and learn  {formValues.techOptions || '...'}. 
+                        I am not confident about my ability to use and learn {formValues.techOptions || '...'}. 
                         I have other strengths. </label>
                         <ButtonGroup name="sefNoConfidence" onChange={handleInputChange} />
                      </div>

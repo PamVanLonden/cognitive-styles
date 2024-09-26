@@ -4,7 +4,7 @@ import { useSurveyForm }  from '../utils/useSurveyForm';
 import { toTitleCase }    from '../utils/Convert';
 import { determinePersona, calculatePageTotal } from '../utils/surveyScore';
 import  PersonaComparison  from '../utils/PersonaComparison';
-import  personas  from '../data/personasObject-2';
+import  personas  from '../data/personasObject';
 
 import { Link } from 'react-router-dom';
 import { useNavigation } from '../utils/NavigationContext';

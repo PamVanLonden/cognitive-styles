@@ -25,8 +25,8 @@ const LearningStyleSurvey = () => {
                 <div className="question">
                     <label htmlFor="lsLookAhead">
                         <span className="circle">7.</span> 
-                        I explore areas of {formValues.techOptions || '...'}&nbsp;
-                        before it is time for me to use them.
+                        I explore areas of {formValues.techOptions || '...'}&nbsp;before 
+                        it is time for me to use them.
                      </label>
                     <ButtonGroup name="lsLookAhead" onChange={handleInputChange}  />
                 </div> 

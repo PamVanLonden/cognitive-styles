@@ -24,8 +24,8 @@ const MotivationSurvey = () => {
                 <div className="question">
                     <label htmlFor="mSuiteLookGood">
                         <span className="circle">4.</span> 
-                        One reason I spend time and money on learning {formValues.techOptions || '...'}&nbsp; 
-                        is because it is a way for me to look good with peers.
+                        One reason I spend time and money on learning {formValues.techOptions || '...'}&nbsp;is  
+                        because it is a way for me to look good with peers.
                      </label>
                     <ButtonGroup name="mSuiteLookGood" onChange={handleInputChange} />
                 </div> 
@@ -33,8 +33,8 @@ const MotivationSurvey = () => {
                 <div className="question">
                     <label htmlFor="mSuiteTester">
                         <span className="circle">5.</span> 
-                        It's fun to try new {formValues.techOptions || '...'}&nbsp;
-                        features that are not yet available to everyone, 
+                        It's fun to try new {formValues.techOptions || '...'}&nbsp;features 
+                        that are not yet available to everyone, 
                         such as being a participant in beta programs to test unfinished apps.
                      </label>
                     <ButtonGroup name="mSuiteTester" onChange={handleInputChange} />
