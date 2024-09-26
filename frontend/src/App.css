@@ -38,7 +38,10 @@ header img {
     margin: 3% 2% 0 2%;
     float:left;
     }
-footer {border-radius:5px 5px 0 0; }
+footer {
+    border-radius:5px 5px 0 0;     
+    text-align:center;
+}
 footer li {
     display:inline;     
     font-family:"Noto Sans", sans-serif;
@@ -162,7 +165,7 @@ select {
 }
 
 .scale:before {
-    content: "Agree---------------------------------------------------------------- Disagree";
+    content: "Disagree---------------------------------------------------------------- Agree";
     display:block;
     font-size:60%;
     width:300px;
