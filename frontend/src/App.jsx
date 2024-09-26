@@ -21,7 +21,7 @@ import './App.css'
 function App() {
 
   return (
-    <div>
+    <div id="top">
       <header>
       <img src="./logo/cog-styles-survey-logo.png" alt="" title="" />
         <h1> Cognitive Facets for learning technical materials</h1>
