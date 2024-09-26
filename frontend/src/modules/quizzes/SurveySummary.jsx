@@ -12,11 +12,11 @@ import { useNavigation } from '../utils/NavigationContext';
 // List of question names where reversal should happen
 const questionsToReverse = [
   'sefNoConfidence', // 2
-  'ipsResearch',     // 9
-  'ipsUnderstandDirection', // 10
-  'atrAvoidAdvancedSections', // 11
-  'atrAvoidDanger',  // 12
-  'atrUseUnproven',  // 13
+  'ipsGatherInfo',  // 9
+  'ipsResearch',     // 10
+  'ipsUnderstandDirection', // 11
+  'atrAvoidAdvancedSections', // 12
+  'atrAvoidDanger',  // 13
 ];
 
 // Function to reverse the value (calculate tens' complement)
