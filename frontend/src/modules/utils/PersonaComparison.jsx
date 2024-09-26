@@ -26,10 +26,15 @@ const PersonaComparison = ({ facet, score, timImage, abiImage, patImage }) => {
       <div className="persona-comparison">
         <h3>{facet}</h3>
         <p className="comparison-bar" >
+          <img src={abiImage} alt="Abi, Abigail, Abishek"  title="Abi, Abigail, Abishek"  className="persona-image abi" />
+          <span className="score-marker" style={{ left: scorePosition(score) }}>{score}</span>
+            <img  src={patImage} 
+                  alt="Pat, Patricia, Patrick" 
+                  title="Pat, Patricia, Patrick" 
+                  className="persona-image pat grayed" 
+              />
             <img src={timImage} alt="Tim, Timara, Timothy"  title="Tim, Timara, Timothy" className="persona-image tim" />
-            <span className="score-marker" style={{ left: scorePosition(score) }}>{score}</span>
-            <img src={patImage} alt="Pat, Patricia, Patrick" title="Pat, Patricia, Patrick" className="persona-image pat grayed" />
-            <img src={abiImage} alt="Abi, Abigail, Abishek"  title="Abi, Abigail, Abishek"  className="persona-image abi" />
+
         </p>
 
       </div>
