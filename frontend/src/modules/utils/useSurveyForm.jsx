@@ -28,6 +28,12 @@ export const useSurveyForm = () => {
   const handleNextPage = () => {
     console.log('Saving formValues to context:', formValues);
     addSurveyData(formValues); // Save all form values in the context
+
+    // Scroll to the top of the next page
+    const topElement = document.getElementById('top');
+    if (topElement) {
+      topElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return { formValues, handleInputChange, handleNextPage, techOptions };
