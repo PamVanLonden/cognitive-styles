@@ -14,7 +14,7 @@ const PersonaComparison = ({ facet, score, timImage, abiImage, patImage }) => {
   const scorePosition = (score) => {
     console.log(`Score: ${score}`); // Debugging
     const clampedScore = Math.max(1, Math.min(score, 9)); // Ensure score is within 1-9
-    const position = ((clampedScore - 1) / 8) * 50; // Place in the middle for exact average score.
+    const position = ((clampedScore - 1) / 8) * 50; // Scale to width used in the stylesheet. 
     console.log(`Position: ${position}%`);
     return `${position}%`;
   };
@@ -28,9 +28,11 @@ const PersonaComparison = ({ facet, score, timImage, abiImage, patImage }) => {
         <p className="comparison-bar" >
           <img src={abiImage} alt="Abi, Abigail, Abishek"  title="Abi, Abigail, Abishek"  className="persona-image abi" />
           <span className="score-marker" style={{ left: scorePosition(score) }}>{score}</span>
-          {/* <img  src={patImage} alt="Pat, Patricia, Patrick" title="Pat, Patricia, Patrick" className="persona-image pat grayed" /> */}
-          <img src={timImage} alt="Tim, Timara, Timothy"  title="Tim, Timara, Timothy" className="persona-image tim" />
+            {/* <img  src={patImage} alt="Pat, Patricia, Patrick" title="Pat, Patricia, Patrick" className="persona-image pat grayed" /> */}
+            <img src={timImage} alt="Tim, Timara, Timothy"  title="Tim, Timara, Timothy" className="persona-image tim" />
+
         </p>
+
       </div>
     );
   };
