@@ -14,7 +14,7 @@ const PersonaComparison = ({ facet, score, timImage, abiImage, patImage }) => {
   const scorePosition = (score) => {
     console.log(`Score: ${score}`); // Debugging
     const clampedScore = Math.max(1, Math.min(score, 9)); // Ensure score is within 1-9
-    const position = ((clampedScore - 1) / 8) * 50; // Scale to width used in the stylesheet. 
+    const position = ((clampedScore - 1) / 8) * 80; // Scale to width used in the stylesheet. 
     console.log(`Position: ${position}%`);
     return `${position}%`;
   };
