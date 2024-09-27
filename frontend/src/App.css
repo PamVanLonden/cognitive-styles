@@ -208,7 +208,6 @@ align-items: stretch;
     margin:0 2.5% 2.5% 0;
     padding:2%;
     min-height:auto;
-    max-height:600px;
     vertical-align:top;
     overflow:visible;
     transition: transform 0.3s ease;
@@ -289,6 +288,7 @@ border-top-right-radius:5px;
         min-width:30%;
         max-width: 42.99%; 
         overflow:scroll;
+        max-height:600px;
     }
 
     .grayed {
