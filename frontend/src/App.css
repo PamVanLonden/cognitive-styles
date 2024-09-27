@@ -266,10 +266,12 @@ border-top-right-radius:5px;
 }
 .score-marker {
     position: absolute;
+    transform: translateX(-50%);
+    left:auto;
+
     font-size: 1.5rem;
     color: white;
-    left:0;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     border-radius: 50%;
     background-color:#C34500;
     padding:1.5% 1.5% 1% 1.5%;
