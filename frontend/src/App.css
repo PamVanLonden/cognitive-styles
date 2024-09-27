@@ -74,7 +74,7 @@ main {
 }
 .proceed > a:hover, 
 .proceed > a:hover {color:white; background-color:rgb(68, 178, 68);}
-.proceed > a.off {background-color:transparent;}
+.proceed > a.off {background-color:transparent; display:none;}
 
 .floatRight {
     float:right; 
