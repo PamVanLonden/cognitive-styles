@@ -67,7 +67,7 @@ const pageTotals = Object.entries(pages).reduce((totals, [page, keys]) => {
   // Calculate total for the current page, applying reversal where necessary
   const total = keys.reduce((sum, key) => {
     let value = surveyData[key] || 0; // Default to 0 if no value found
-    if (questionsToReverse.includes(key)) {
+    if (questionsToReverse.includes(key) && value) {
       value = getReversedValue(value); // Reverse the value if it's in the reversal list
     }
     return sum + value;
