@@ -8,7 +8,7 @@ import  personas  from '../data/personasObject';
 
 import { Link } from 'react-router-dom';
 import { useNavigation } from '../utils/NavigationContext';
-import { SURVEY_PAGES, SURVEY_MAX_AGREE_VALUE, SURVEY_MIN_AGREE_VALUE } from '../../contants';
+import { SURVEY_PAGES, SURVEY_MAX_AGREE_VALUE, SURVEY_MIN_AGREE_VALUE } from '../utils/constants';
 
 // List of question names where reversal should happen
 const questionsToReverse = [

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { SurveyContext } from './SurveyContext';
-import { SURVEY_MAX_AGREE_VALUE, SURVEY_MIN_AGREE_VALUE } from '../../contants';
+import { SURVEY_MAX_AGREE_VALUE, SURVEY_MIN_AGREE_VALUE } from './constants';
 
 // This component will generate the Likert buttons (9)
 const ButtonGroup = ({ name }) => {
