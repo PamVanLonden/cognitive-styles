@@ -1,6 +1,6 @@
 Based on research by the GenderMag (InclusiveMag) program 
 at Oregon State and other universities, 
-this survey compares students' cognitive learning styles to your peers.
+this survey compares students' cognitive learning styles to their peers.
 
 The survey incorporates 5 facets related to gender and compares a set of 3 personas. 
 
