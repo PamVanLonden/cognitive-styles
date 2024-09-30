@@ -1,5 +1,10 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { SurveyProvider } from './modules/utils/SurveyContext';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import ReactGA from 'react-ga4'; // For Google Analytics 4
+ReactGA.initialize('G-1F7Z14F760');
 
 import Nav from './modules/Nav';
 import Slogan from './modules/Slogan';
@@ -19,6 +24,12 @@ import SurveySummary from './modules/quizzes/SurveySummary';
 import './App.css'
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Send pageview to Google Analytics on route change
+    window.gtag('config', 'G-1F7Z14F760', { 'page_path': location.pathname });
+  }, [location]);
 
   return (
     <div id="top">
@@ -28,8 +39,6 @@ function App() {
         <Slogan />
       </header>
 
-      <SurveyProvider>
-        <Router>
            <Nav />
           <main>
           <section>
@@ -46,8 +55,6 @@ function App() {
             </Routes>
           </section>
           </main>
-        </Router>
-      </SurveyProvider>
 
       <footer>
         <p><cite>&copy; 2024 Oregon State University</cite> </p>
@@ -57,4 +64,14 @@ function App() {
   );
 }
 
-export default App
+function AppWithProviders() {
+  return (
+    <Router>
+      <SurveyProvider>
+        <App />
+      </SurveyProvider>
+    </Router>
+  );
+}
+
+export default AppWithProviders;
