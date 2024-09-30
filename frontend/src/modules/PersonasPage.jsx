@@ -8,7 +8,7 @@ const PersonasPage = () => {
         <>
             <h2>The Personas</h2>
         
-            <p>The Abi, Pat, Dav, and Tim Personas are identical in several ways:  
+            <p>The Abi, Pat, and Tim Personas are identical in several ways:  
                 they all have the same job, live in the same place, and all are equally comfortable with mathematics 
                 and with the technology they regularly use. 
                 Their differences are strictly derived from the gender and socioeconomic research on five facets,
