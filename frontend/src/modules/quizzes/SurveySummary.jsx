@@ -149,7 +149,7 @@ function SurveySummary() {
       <h2>Survey Summary</h2>
       <article>
       <p>Based on your selections on each of the survey pages, 
-        <strong>you are 
+        <strong>you are&nbsp; 
           {abiPercent(averageTimScore())} like Abi and 
           {timPercent(averageTimScore())} like Tim
         </strong>. 
