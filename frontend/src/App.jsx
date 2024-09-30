@@ -11,6 +11,7 @@ import Slogan from './modules/Slogan';
 import HomePage from './modules/HomePage';
 import PersonasPage from './modules/PersonasPage';
 import FacetsPage from './modules/FacetsPage';
+import AboutPage from './modules/AboutPage';
 
 import SelfEfficacySurvey from './modules/quizzes/SelfEfficacySurvey';
 import MotivationSurvey from './modules/quizzes/MotivationSurvey';
@@ -44,6 +45,7 @@ function App() {
           <section>
             <Routes>
                 <Route path="/"                       element={<HomePage />}></Route>
+                <Route path="/about"                  element={<AboutPage />}></Route> 
                 <Route path="/personasPage"           element={<PersonasPage />}></Route>
                 <Route path="/facetsPage"             element={<FacetsPage />}></Route>             
                 <Route path="/self-efficacy-survey"   element={<SelfEfficacySurvey />}></Route>
