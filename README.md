@@ -27,12 +27,12 @@ Additional React libraries include:
 1. Stylesheet designed by Pam Van Londen (because she hates using div tags and a million classes).
 2. The logo was initially designed by GPTChat's LogoCreater and modified by Pam.
 3. The color scheme is: 
-    --blue:   rgb(58, 154, 198);
-    --green:  rgb(68, 178, 68);
-    --orange: rgb(224, 137, 6);
-    --red:    #C34500;
-    --shadow: rgb(209, 208, 208);
-    Colornames allowed: black, gray, whitesmoke, white. 
+    * --blue:   rgb(58, 154, 198);
+    * --green:  rgb(68, 178, 68);
+    * --orange: rgb(224, 137, 6);
+    * --red:    #C34500;
+    * --shadow: rgb(209, 208, 208);
+    * Colornames allowed: black, gray, whitesmoke, white. 
 
 ## Google Analytics
 The gTag has been included in index.html and App.jsx to determine how many people click and how many complete the survey. In addition, it may track who has downloaded a PNG file of their results, for use in discussions.
