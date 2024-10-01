@@ -149,8 +149,8 @@ function SurveySummary() {
       <h2>Survey Summary</h2>
       <article>
       <p>Based on your selections on each of the survey pages, <strong>you are 
-           {abiPercent(averageTimScore())} like Abi and 
-           {timPercent(averageTimScore())} like Tim 
+           &nbsp;{abiPercent(averageTimScore())} like Abi and 
+           &nbsp;{timPercent(averageTimScore())} like Tim 
         </strong>. 
         Here is how you compare to the personas for each facet:</p>
 
