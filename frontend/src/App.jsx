@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { SurveyProvider } from './modules/utils/SurveyContext';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import ReactGA from 'react-ga4'; // For Google Analytics 4
 ReactGA.initialize('G-1F7Z14F760');
@@ -59,8 +60,8 @@ function App() {
           </main>
 
       <footer>
-        <p><cite>&copy; 2024 Oregon State University</cite> </p>
-        <p><cite>See <a href="https://gendermag.org" target="_blank">GenderMag.org</a> for research and citations</cite></p>
+        <p><Link to="/about"> About this App</Link></p>
+        <p><cite>&copy; 2024 Oregon State University</cite>   |  <cite>See <a href="https://gendermag.org" target="_blank">GenderMag.org</a> for research and citations</cite></p>
       </footer>
     </div>
   );
