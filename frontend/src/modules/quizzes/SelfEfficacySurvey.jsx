@@ -3,11 +3,13 @@ import ButtonGroup from '../utils/ButtonGroup.jsx';
 import { useSurveyForm } from '../utils/useSurveyForm'; // Import the custom hook
 
 const SelfEfficacySurvey = () => {
-    const { formValues, handleInputChange, handleNextPage, techOptions } = useSurveyForm();
+    const { formValues, handleTechOptionChange, handleInputChange, handleNextPage, techOptions } = useSurveyForm();
+    
     return (
         <>
            <h2>Cognitive Styles Survey </h2>
            <article>
+                
                 <h3>Part 1 of 5</h3>
                 <p>This part of the survey focuses on your confidence in your ability to achieve specific goals or tasks.</p>
                 <p>To see how you compare to your classmates when learning new technology skills,
@@ -20,7 +22,7 @@ const SelfEfficacySurvey = () => {
                         <select 
                             name="techOptions" 
                             value={formValues.techOptions || ''} 
-                            onChange={handleInputChange}
+                            onChange={handleTechOptionChange}  // Use dedicated handler
                         >
                             <option value="">choose...</option>
                                 {Object.values(techOptions).map((techOption, index) => (
@@ -31,6 +33,11 @@ const SelfEfficacySurvey = () => {
                 </div>
 
             <form id="survey">
+                 
+                    <p className="consent">By completing the survey, you consent to allow Google to track your 
+                    your city, device-type, and browser.
+                    </p>
+                 
                 <fieldset><legend>Self-efficacy</legend>
  
                     <div className="question ">

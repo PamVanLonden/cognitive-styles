@@ -5,6 +5,7 @@ import { toTitleCase }    from '../utils/Convert';
 import { determinePersona, calculatePageTotal } from '../utils/surveyScore';
 import  PersonaComparison  from '../utils/PersonaComparison';
 import  personas  from '../data/personasObject';
+import { ScreenshotButton} from '../utils/ScreenshotButton';
 
 import { Link } from 'react-router-dom';
 import { useNavigation } from '../utils/NavigationContext';
@@ -148,8 +149,7 @@ function SurveySummary() {
     <>
       <h2>Survey Summary</h2>
       <article>
-      <p>Based on your selections on each of the survey pages, 
-        <strong>you are {abiPercent(averageTimScore())} like Abi and {timPercent(averageTimScore())} like Tim</strong>. 
+      <p>Based on your use of <strong>{(formValues.techOptions) || '[selection missing]'}</strong> and your selections on each of the survey pages, you are <strong>{abiPercent(averageTimScore())} like Abi</strong> and <strong>{timPercent(averageTimScore())} like Tim</strong>. 
         Here is how you compare to the personas for each facet:</p>
 
         <div className="survey-summary">
@@ -185,7 +185,7 @@ function SurveySummary() {
 
       <nav className="proceed">
         <Link to="/attitude-risk-survey">&larr; Previous page</Link>
-        <Link className="off" />
+        <ScreenshotButton />
       </nav>
 
     </>
