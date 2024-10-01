@@ -2,7 +2,7 @@
 function AboutPage(){
 return (
     <>
-    <h2>About this Survey</h2>
+    <h2>About this app</h2>
     <article>
         <p>Based on research by the GenderMag (InclusiveMag) program 
         at Oregon State and other universities, 
