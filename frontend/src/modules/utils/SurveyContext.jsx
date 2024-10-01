@@ -5,6 +5,7 @@ export const SurveyContext = createContext();
 
 export const SurveyProvider = ({ children }) => {
   const [surveyData, setSurveyData] = useState({
+    techOptions: '', 
     sefHelpMenu: 0,
     sefWatchedSomeone: 0,
     sefNoOneHelped: 0,

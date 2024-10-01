@@ -14,6 +14,12 @@ export const useSurveyForm = () => {
     setFormValues(surveyData); // Initialize formValues with existing surveyData
   }, [surveyData]);
 
+    // When a user selects a tech option
+    const handleTechOptionChange = (event) => {
+      const selectedOption = event.target.value;
+      addSurveyData('techOptions', selectedOption);
+  };
+
   // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,5 +42,5 @@ export const useSurveyForm = () => {
     }
   };
 
-  return { formValues, handleInputChange, handleNextPage, techOptions };
+  return { formValues, handleTechOptionChange, handleInputChange, handleNextPage, techOptions };
 };
