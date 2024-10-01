@@ -64,6 +64,8 @@ main {
     min-width:400px;
     padding:0 2%;
 }
+.consent {float:right; margin:0 0 -2.5% 36%; width:60%; font-size: 70%;}
+ 
 
 .proceed {
     background-color:transparent;
@@ -71,7 +73,8 @@ main {
     margin:3%;
     width:95%;
 }
-.proceed > a {
+.proceed > a,
+.proceed > button {
     font-size:100%;
     color:white;
     background-color:var(--blue);
@@ -84,8 +87,12 @@ main {
     font-family:"Noto Sans", sans-serif;
     text-align:center;
 }
+.proceed > button.download {width:300px;}
 .proceed > a:hover, 
-.proceed > a:hover {color:white; background-color:var(--green);}
+.proceed > button:hover {
+    color:white; 
+    background-color:var(--green);
+}
 .proceed > a.off {background-color:transparent; visibility:hidden;}
 
 .floatRight {
@@ -308,6 +315,6 @@ border-top-right-radius:5px;
     .grayed {
         opacity:100%;
     }
-
+    .consent {margin:0 0 -2.5% 25%; width:75%;}
 
 }
