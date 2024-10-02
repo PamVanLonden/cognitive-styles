@@ -24,9 +24,11 @@ return (
         <p>This app/site is built using Vite+React and is hosted by Render.com. Some code was developed using ChatGPT. 
         Additional React libraries include:</p>
         <ul>
-            <li>useState, useEffect, createContext, and useContext from React.</li>
-            <li>BrowserRouter, useLocation, and Link from react-router-dom https://reactrouter.com/en/main</li>
-            <li>rollup: https://www.npmjs.com/package/@rollup/plugin-wasm</li>
+            <li>useState, useEffect, createContext, and useContext <a href="https://react.dev/reference/react/hooks" target="_blank">hooks from React</a>.</li>
+            <li>BrowserRouter, useLocation, and Link from <a href="https://reactrouter.com/en/main" target="_blank">react-router-dom</a>. </li>
+            <li><a href="https://www.npmjs.com/package/@rollup/plugin-wasm" target="_blank">rollup</a> for use on Render.com. </li>
+            <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2Canvas</a> and 
+                <a href="https://www.npmjs.com/package/pica" target="_blank">pica</a>, for downloading compressed image files.</li>
         </ul>
         
         <h2> About the styles</h2>
