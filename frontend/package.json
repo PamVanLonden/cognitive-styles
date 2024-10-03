@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "html2canvas": "^1.4.1",
     "pica": "^9.0.1",
     "react": "^18.3.1",
