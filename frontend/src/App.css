@@ -63,9 +63,11 @@ main {
     min-height:600px;
     min-width:400px;
     padding:0 2%;
+    
 }
 .consent {float:right; margin:0 0 -2.5% 36%; width:60%; font-size: 70%;}
  
+#prompts button {margin:0 0 0 2%; border:0; color:var(--green); text-decoration:underline; background-color:transparent;}
 
 .proceed {
     background-color:transparent;
@@ -74,7 +76,8 @@ main {
     width:95%;
 }
 .proceed > a,
-.proceed > button {
+.proceed > button,
+button[type="submit"] {
     font-size:100%;
     color:white;
     background-color:var(--blue);
@@ -109,6 +112,7 @@ h1, h2, h3, h4, dt {text-transform:capitalize; }
 h2 {color:var(--blue);}
 h3 {line-height:1;}
 dt {color:var(--red);}
+li {margin-bottom:2%;}
 .smaller {font-size:60%;}
 
 .circle {
@@ -140,9 +144,9 @@ fieldset {
 legend {
     background-color:var(--red);;
     font-weight:bold; 
-    font-size:120%;
+    font-size:115%;
     color:white;
-    padding:2%;
+    padding:1% 1.5%;
     margin-bottom:3%;
     text-align:left;
     border-radius:5px;
@@ -156,6 +160,17 @@ fieldset p {
 label, input, textarea, select {
     font-family: inherit;
 }
+label {display:block;}
+textarea {width:95%; height:100px; padding:2%;}
+    textarea:valid,
+    textarea:focus,
+    textarea:active, 
+    textarea:focus-within,
+    textarea:focus-visible {border:2px solid var(--green); }
+
+textarea:invalid,
+    textarea::grammar-error  {border:3px solid var(--red); }
+
 select {
     font-size: 100%;
     margin-bottom:4%;

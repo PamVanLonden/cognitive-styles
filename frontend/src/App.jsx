@@ -13,6 +13,7 @@ import HomePage from './modules/HomePage';
 import PersonasPage from './modules/PersonasPage';
 import FacetsPage from './modules/FacetsPage';
 import AboutPage from './modules/AboutPage';
+import DiscussionPage from './modules/DiscussionPage';
 
 import SelfEfficacySurvey from './modules/quizzes/SelfEfficacySurvey';
 import MotivationSurvey from './modules/quizzes/MotivationSurvey';
@@ -55,6 +56,7 @@ function App() {
                 <Route path="/info-processing-survey" element={<InformationProcessingSurvey />}></Route>
                 <Route path="/attitude-risk-survey"   element={<AttitudeTowardRiskSurvey />}></Route>
                 <Route path="/survey-summary"         element={<SurveySummary />}></Route>
+                <Route path="/discussion-prompts"     element={<DiscussionPage />}></Route>            
             </Routes>
           </section>
           </main>
