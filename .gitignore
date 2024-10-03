@@ -1,3 +1,5 @@
+echo ".env" >> .gitignore
+
 # npm
 node_modules
 package-lock.json
