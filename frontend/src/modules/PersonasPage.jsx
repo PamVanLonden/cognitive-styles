@@ -15,7 +15,7 @@ const PersonasPage = () => {
                 which are detailed in their profiles below. Scroll through each:
                </p>
                
-            <article class="card">
+            <article className="card">
                 {personas.map((persona, index) => (
                     <figure key={index}>
                         <img src={persona.portrait} alt={`${persona.names} portrait`} />
@@ -33,8 +33,8 @@ const PersonasPage = () => {
                     </figure>
                  ))}
 
-                <nav className="proceed">
-                   <Link to="/" onClick={handleNextPage} >&larr; Home</Link>
+<nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
+                   <Link to="/" onClick={handleNextPage} >&larr; Intro</Link>
                    <Link to="/facetsPage"   onClick={handleNextPage}>Facets &rarr;</Link>
                 </nav>
             </article>

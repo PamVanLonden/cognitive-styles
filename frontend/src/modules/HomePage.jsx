@@ -33,7 +33,7 @@ function HomePage(){
                 <p>Below is a diagram of how the Personas and Facets relate:</p>
                 <img src="./images/persona-scale-faces.png" alt="Diagram of how the Personas and Facets relate." title="" />
 
-                <nav className="proceed">
+                <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
                    <Link className="off"></Link>
                    <Link to="/personasPage"  onClick={handleNextPage}>Personas &rarr;</Link>
                 </nav>

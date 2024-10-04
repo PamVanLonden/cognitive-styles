@@ -28,9 +28,16 @@ return (
             <li>BrowserRouter, useLocation, and Link from <a href="https://reactrouter.com/en/main" target="_blank">react-router-dom</a>. </li>
             <li><a href="https://www.npmjs.com/package/@rollup/plugin-wasm" target="_blank">rollup</a> for use on Render.com. </li>
             <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2Canvas</a> and 
-                <a href="https://www.npmjs.com/package/pica" target="_blank">pica</a>, for downloading compressed image files.</li>
+                <a href="https://www.npmjs.com/package/pica" target="_blank">Pica</a>, for downloading compressed image files.</li>
         </ul>
         
+        <h2>Accessibility features</h2>
+        <ul>
+            <li>Skip-link added above header.</li>
+            <li>Aria attributes.</li>
+            <li>Alternative text for images.</li>
+            <li>Visual :focus changes for interactivity.</li>
+        </ul>
         <h2> About the styles</h2>
         <ul>
             <li>Stylesheet designed by Pam Van Londen (because she hates using div tags and a million classes).</li>

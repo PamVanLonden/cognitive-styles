@@ -37,7 +37,7 @@ const FacetsPage = () => {
           const facet = facetDefinitions[facetKey]; // Main facet (motivations, InformationProcessingStyle, etc.)
           return (
             <figure key={index}>
-              <h3>{toTitleCase(facetKey)} <br /><span class="smaller">{facet.description}</span></h3>
+              <h3>{toTitleCase(facetKey)} <br /><span className="smaller">{facet.description}</span></h3>
               <figcaption></figcaption>
               
               {/* Nested map for facet values */}
@@ -57,7 +57,7 @@ const FacetsPage = () => {
         })}
            </div>
 
-           <nav className="proceed">
+           <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
                 <Link to="/personasPage" onClick={handleNextPage} >&larr; Personas</Link>
                 <Link to="/self-efficacy-survey"   onClick={handleNextPage}>Survey &rarr;</Link>
             </nav>
