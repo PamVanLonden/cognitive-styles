@@ -36,14 +36,16 @@ function App() {
 
   return (
     <div id="top">
-      <header>
-      <img src="./logo/cog-styles-survey-logo.png" alt="" title="" />
+      <a href="#main-content" className="skip-link">Skip to main content</a>
+
+      <header role="banner">
+      <img src="./logo/cog-styles-survey-logo.png" alt="Brain icon to represent cognitive styles" />
         <h1> Cognitive Facets for learning technical materials</h1>
         <Slogan />
       </header>
 
            <Nav />
-          <main>
+          <main role="main" id="main-content">
           <section>
             <Routes>
                 <Route path="/"                       element={<HomePage />}></Route>
@@ -61,7 +63,7 @@ function App() {
           </section>
           </main>
 
-      <footer>
+      <footer role="contentinfo">
         <p><Link to="/about"> About this App</Link></p>
         <p><cite>&copy; 2024 Oregon State University</cite>   |  <cite>See <a href="https://gendermag.org" target="_blank">GenderMag.org</a> for research and citations</cite></p>
       </footer>

@@ -29,6 +29,25 @@ body {
 /* Anchors and Nav */
 a:link {color:black;}
 a:visited {color:gray;}
+.skip-link {
+    position: absolute;
+    top: -40px; /* Off-screen */
+    left: 0;
+    background: var(--green);
+    color: white;
+    padding: 8px 16px;
+    z-index: 100; /* Bring it to the front */
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .skip-link:focus {
+    top: 10px; /* Bring it into view when focused */
+     outline: 2px solid white; /* Optional focus ring */
+     outline-offset: 0px;  
+     box-shadow: 5px 5px 5px gray;
+  }
+  .skip-link:link {color:white;}
 nav {display:flex; flex-flow:wrap row; background-color:var(--blue); border-radius:0 0 5px 5px;  }
 nav a:link {padding:1% 2%; border-right:3px solid white; color:white; font-size:.9em; text-decoration:none;}
 nav a:visited {color:white;}
@@ -75,7 +94,7 @@ main {
     margin:3%;
     width:95%;
 }
-.proceed > a,
+.proceed > a:link,
 .proceed > button,
 button[type="submit"] {
     font-size:100%;
@@ -90,13 +109,23 @@ button[type="submit"] {
     font-family:"Noto Sans", sans-serif;
     text-align:center;
 }
-.proceed > button.download {width:300px;}
-.proceed > a:hover, 
-.proceed > button:hover {
+.proceed > a.off {
+    background-color:transparent; 
+    visibility:hidden;
+}
+.proceed > a:hover,
+button:hover {
     color:white; 
     background-color:var(--green);
+    box-shadow:3px 3px 5px 1px var(--shadow);
 }
-.proceed > a.off {background-color:transparent; visibility:hidden;}
+.proceed > a:focus,
+ button:focus {
+    outline: 2px solid var(--red);
+    outline-offset: 0px;
+}
+button.download {width:300px;}
+
 
 .floatRight {
     float:right; 
@@ -205,8 +234,8 @@ select {
     width:300px;
  
 }
-.buttonGroup {margin-top:4%;}
-.buttonGroup button {
+.likertGroup {margin-top:4%;}
+.likertGroup button {
     margin: 1% 2.5% 2% 0;
     border:0;
     padding:1% 1.2%;
@@ -215,12 +244,12 @@ select {
     width:25px;
     
 }
-.buttonGroup button:hover {
+.likertGroup button:hover {
     color:white; 
     background:var(--orange);
     border:0;
 }
-.buttonGroup button.selected {
+.likertGroup button.selected {
     color:white; 
     background:var(--orange);
     border:0;
