@@ -29,7 +29,11 @@ export const ScreenshotButton = () => {
 
   return (
     <>
-      <button className="download" onClick={takeScreenshot}>Download Summary <PiDownloadFill /> (.png)</button>
+      <button role="button"
+        className="download" 
+        onClick={takeScreenshot}
+        aria-label="Download the survey summary to a PNG file."
+        >Download Summary <PiDownloadFill /> (.png)</button>
     </>
   );
 };
