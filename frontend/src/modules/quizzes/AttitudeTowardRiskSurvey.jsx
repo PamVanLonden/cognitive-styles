@@ -43,7 +43,7 @@ const AttitudeTowardRiskSurvey = () => {
                     <ButtonGroup name="atrUseUnproven" onChange={handleInputChange} />
                 </div>
 
-                <nav className="proceed">
+                <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
                    <Link to="/info-processing-survey">&larr; Previous page</Link>
                    <Link to="/survey-summary"  onClick={handleNextPage}>Summary &rarr;</Link>
                 </nav>

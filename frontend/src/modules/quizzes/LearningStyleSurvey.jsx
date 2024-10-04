@@ -40,7 +40,7 @@ const LearningStyleSurvey = () => {
                     <ButtonGroup name="lsUpdateSettings"  onChange={handleInputChange} />
                 </div>
 
-                <nav className="proceed">
+                <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
                    <Link to="/motivation-survey">&larr; Previous page</Link> 
                    <Link to="/info-processing-survey" onClick={handleNextPage}>Next page &rarr;</Link>
                 </nav>

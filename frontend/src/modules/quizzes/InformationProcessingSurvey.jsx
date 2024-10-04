@@ -45,7 +45,7 @@ const InformationProcessingSurvey = () => {
                 </div>
 
                     
-                <nav className="proceed">
+                <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
                    <Link to="/learning-style-survey">&larr; Previous page</Link> 
                    <Link to="/attitude-risk-survey" onClick={handleNextPage}>Next page &rarr;</Link>
                 </nav>

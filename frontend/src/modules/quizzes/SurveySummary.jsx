@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { SurveyContext }  from '../utils/SurveyContext';
 import { useSurveyForm }  from '../utils/useSurveyForm'; 
 import { toTitleCase }    from '../utils/Convert';
-import { determinePersona, calculatePageTotal } from '../utils/surveyScore';
+import { determinePersona } from '../utils/surveyScore';
 import  PersonaComparison  from '../utils/PersonaComparison';
 import  personas  from '../data/personasObject';
 import { ScreenshotButton} from '../utils/ScreenshotButton';
@@ -183,7 +183,7 @@ function SurveySummary() {
 
       </article>
 
-      <nav className="proceed">
+      <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
         <Link to="/attitude-risk-survey">&larr; Previous page</Link>
         <ScreenshotButton />
       </nav>

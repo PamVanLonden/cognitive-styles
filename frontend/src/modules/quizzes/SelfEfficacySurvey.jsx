@@ -100,7 +100,7 @@ const SelfEfficacySurvey = () => {
                         <ButtonGroup name="sefNoConfidence" onChange={handleInputChange} />
                      </div>
                      
-                     <nav className="proceed">
+                     <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
                         <Link className="off"></Link>
                         <Link to="/motivation-survey" onClick={handleNextPage}>Next page &rarr;</Link>
                     </nav>
