@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-//   service_50guucf
-// public key RfXyLTcIAEQczcB0z
-// template id template_rlrtct8
-
-
-
-
 
 function ContactPage() {
     const [message, setMessage] = useState('');
