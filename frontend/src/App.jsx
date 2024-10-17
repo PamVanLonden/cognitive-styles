@@ -14,6 +14,7 @@ import PersonasPage from './modules/PersonasPage';
 import FacetsPage from './modules/FacetsPage';
 import AboutPage from './modules/AboutPage';
 import DiscussionPage from './modules/DiscussionPage';
+import ContactPage from './modules/ContactPage';
 
 import SelfEfficacySurvey from './modules/quizzes/SelfEfficacySurvey';
 import MotivationSurvey from './modules/quizzes/MotivationSurvey';
@@ -59,12 +60,17 @@ function App() {
                 <Route path="/attitude-risk-survey"   element={<AttitudeTowardRiskSurvey />}></Route>
                 <Route path="/survey-summary"         element={<SurveySummary />}></Route>
                 <Route path="/discussion-prompts"     element={<DiscussionPage />}></Route>            
-            </Routes>
+                <Route path="/contact"                element={<ContactPage />}></Route>            
+           </Routes>
           </section>
           </main>
 
+      <nav className="navBottom">
+            <Link to="/about">About this App</Link>
+            <Link to="/discussion-prompts">Discussion Prompts</Link>
+            <Link to="/contact">Contact</Link>
+      </nav>
       <footer role="contentinfo">
-        <p><Link to="/about"> About this App</Link></p>
         <p><cite>&copy; 2024 Oregon State University</cite>   |  <cite>See <a href="https://gendermag.org" target="_blank">GenderMag.org</a> for research and citations</cite></p>
       </footer>
     </div>

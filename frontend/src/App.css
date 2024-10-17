@@ -53,6 +53,8 @@ nav a:link {padding:1% 2%; border-right:3px solid white; color:white; font-size:
 nav a:visited {color:white;}
 nav a:hover, nav a:active {background-color:white; color:var(--blue);}
 
+
+
 header, footer {
     color:white;
     background-color:var(--orange);
@@ -70,14 +72,18 @@ header img {
     float:left;
     }
 footer {
-    border-radius:5px 5px 0 0;     
     text-align:center;
+    padding:0 0 auto 0;
 }
 footer li {
     display:inline;     
     font-family:"Noto Sans", sans-serif;
 }
 footer a:link, footer a:visited {color:white;}
+.navBottom {
+    border-radius: 5px 5px 0 0; 
+}
+
 main {
     min-height:600px;
     min-width:400px;
@@ -85,7 +91,7 @@ main {
     
 }
 .consent {float:right; margin:0 0 -2.5% 36%; width:60%; font-size: 70%;}
- 
+
 #prompts button {margin:0 0 0 2%; border:0; color:var(--green); text-decoration:underline; background-color:transparent;}
 
 .proceed {
@@ -190,7 +196,7 @@ label, input, textarea, select {
     font-family: inherit;
 }
 label {display:block;}
-textarea {width:95%; height:100px; padding:2%;}
+textarea {width:95%; height:200px; padding:2%;}
     textarea:valid,
     textarea:focus,
     textarea:active, 
@@ -198,8 +204,14 @@ textarea {width:95%; height:100px; padding:2%;}
     textarea:focus-visible {border:2px solid var(--green); }
 
 textarea:invalid,
-    textarea::grammar-error  {border:3px solid var(--red); }
-
+    textarea::grammar-error  {border:3px solid var(--red); 
+    }
+#contact p {margin-bottom:20px;}
+#contact .floatLeft {
+    float:left; 
+    width:50%; margin-right:3%;
+}
+#contact input {width:30%; padding:1%;}
 select {
     font-size: 100%;
     margin-bottom:4%;
@@ -208,6 +220,19 @@ select {
     border-radius:5px;
     padding:.7%;
 }
+.confirmation {
+    position: fixed; 
+    top: 300px;
+    left: 300px; 
+    right: 300px; 
+    background: var(--green);
+    padding: 1em; 
+    text-align: center ;
+    color:white;
+    box-shadow:3px 3px gray;
+    border-radius:5px;
+}
+
 #survey .question:nth-child(odd) {
     background-color:whitesmoke;
 }
