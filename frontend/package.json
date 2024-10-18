@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "generate-sitemap": "node generateSitemap.mjs",
-    "build": "vite build && node generateSitemap.mjs",
+    "build": "vite build",
     "lint": "eslint",
     "preview": "vite preview"
   },
@@ -20,9 +19,7 @@
     "react-ga4": "^2.1.0",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.24.1",
-    "react-router-sitemap-generator": "^0.0.8",
-    "rollup": "^4.21.3",
-    "sitemap": "^8.0.0"
+    "rollup": "^4.21.3"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
