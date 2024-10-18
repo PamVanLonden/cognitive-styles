@@ -3,6 +3,7 @@ import { SurveyProvider } from './modules/utils/SurveyContext';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+// import { generateSitemap } from 'react-router-sitemap';
 
 import ReactGA from 'react-ga4'; // For Google Analytics 4
 ReactGA.initialize('G-1F7Z14F760');
@@ -60,7 +61,8 @@ function App() {
                 <Route path="/attitude-risk-survey"   element={<AttitudeTowardRiskSurvey />}></Route>
                 <Route path="/survey-summary"         element={<SurveySummary />}></Route>
                 <Route path="/discussion-prompts"     element={<DiscussionPage />}></Route>            
-                <Route path="/contact"                element={<ContactPage />}></Route>            
+                <Route path="/contact"                element={<ContactPage />}></Route> 
+                {/* <Route path="/sitemap.xml"            element={<generateSitemap />}></Route>                        */}
            </Routes>
           </section>
           </main>
