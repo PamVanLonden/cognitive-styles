@@ -1,6 +1,6 @@
 
 // Determines the closest persona based on the total score
-import personas from '../data/personasObject';  
+import personas from '../quizzes/gender/personasObject';  
 
 const pageAvg = {
     SelfEfficacy: 40, 

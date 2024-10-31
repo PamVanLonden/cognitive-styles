@@ -1,7 +1,8 @@
 function Slogan() {
     return (
        <>
-           <p>How do your cognitive learning styles compare to your peers?</p>
+           <p>What kind of cognitive learning styles do you use?</p>
+           {/* <p>How do your cognitive learning styles compare to your peers?</p> */}
        </>
     );
 }

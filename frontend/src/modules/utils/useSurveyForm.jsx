@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { SurveyContext } from '../utils/SurveyContext';
-import techOptions from '../data/techOptions.js';
+import techOptions from '../quizzes/gender/techOptions.js';
 
 
 // Custom hook to handle form state and updates
