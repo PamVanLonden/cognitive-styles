@@ -8,7 +8,7 @@ const personas = [
         "location": "Not provided",
         "pronouns": "her, him, them",
         "mathLogic": "Tim likes Math and working with logic. They consider theirself a numbers person. Tim enjoys learning about and using new technologies.",
-        "accessToTech": ""
+        "accessToTech": "unknown"
       },
       "Email": "Starts workday with emails, which they answer one at a time, as soon as they read them.",
       "motivationsAttitudes": {

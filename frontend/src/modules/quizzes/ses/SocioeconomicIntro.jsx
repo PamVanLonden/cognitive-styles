@@ -62,14 +62,21 @@ function SESIntro() {
                     <img src={personasSES.portrait} alt={`${personasSES.names} portrait`} />
                     <figcaption>
                         <h3>{personasSES.names}</h3>
-                        <p><strong>Background:</strong> {personasSES.background.employment}</p>
-                        <p><strong>Email Style:</strong> {personasSES.Email}</p>
-                        <p><strong>Motivations:</strong> {personasSES.motivationsAttitudes.description}</p>
-                        <p><strong>Tech Self-Efficacy:</strong> {personasSES.techSelfEfficacy.description}</p>
+
+                        <p><strong>Access to Reliable Tech:</strong> {personasSES.background.accessToTech}</p>
+                        <p><strong>Communication Literacy:</strong> {personasSES.communicationLiteracy}</p>
                         <p><strong>Attitude Toward Risk:</strong> {personasSES.attitudeTowardRisk.description}</p>
-                        <p><strong>Info Processing Style:</strong> {personasSES.infoProcessingStyle.description}</p>
-                        <p><strong>Learning Style:</strong> {personasSES.learningStyle.learningDescription}</p>
-                        <p><strong>Summary:</strong> {personasSES.summarySimple}</p>
+                        <p><strong>Tech Privacy and Security:</strong> {personasSES.privacySecurity}</p>
+                        <p><strong>Perceived Control and Attitude Toward Authority:</strong> {personasSES.perceivedControlAuthority}</p>
+                        <p><strong>Tech Self-Efficacy:</strong> {personasSES.techSelfEfficacy.description}</p>
+
+                        {/* <p><strong>Background:</strong> {personasSES.background.employment}</p>
+                        <p><strong>Email Style:</strong> {personasSES.Email}</p>
+                        <p><strong>Motivations:</strong> {personasSES.motivationsAttitudes.description}</p> */}
+
+                        {/* <p><strong>Info Processing Style:</strong> {personasSES.infoProcessingStyle.description}</p> */}
+                        {/* <p><strong>Learning Style:</strong> {personasSES.learningStyle.learningDescription}</p>
+                        <p><strong>Summary:</strong> {personasSES.summarySimple}</p> */}
                     </figcaption>
                 </figure>
               ))}
@@ -78,7 +85,8 @@ function SESIntro() {
 
         <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
           <Link to="/survey-summary">&larr; Previous Survey</Link>
-          <Link to="/ses-survey" onClick={handleNextPage} id="survey">Take SES Survey &rarr;</Link>
+          <Link to="/ses-slider" onClick={handleNextPage} id="survey">Slider Survey &rarr;</Link>
+          <Link to="/ses-selfefficacy" onClick={handleNextPage} id="survey">Take SES Survey &rarr;</Link>
         </nav>
     </div>
   );

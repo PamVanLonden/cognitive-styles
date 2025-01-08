@@ -27,7 +27,14 @@ import SurveySummary from './modules/quizzes/gender/SurveySummary';
 
 /* SES Mag */
 import SESIntro from './modules/quizzes/ses/SocioeconomicIntro.jsx';
-import SESStatusSurvey from './modules/quizzes/ses/SocioeconomicSurvey.jsx';
+import SESSelfEfficacySurvey from './modules/quizzes/ses/SESSelfEfficacySurvey.jsx';
+import SESAttitudeRiskSurvey from './modules/quizzes/ses/SESAttitudeRiskSurvey.jsx';
+import SESControlAuthoritySurvey from './modules/quizzes/ses/SESControlAuthoritySurvey.jsx';
+import SESPrivacySecuritySurvey from './modules/quizzes/ses/SESPrivacySecuritySurvey.jsx';
+import SESCommsSurvey from './modules/quizzes/ses/SESCommsSurvey.jsx';
+import SESAccessSurvey from './modules/quizzes/ses/SESAccessSurvey.jsx';
+import SESSliderSurvey from './modules/quizzes/ses/SESSliderSurvey.jsx';
+import SESSurveySummary from './modules/quizzes/ses/SESSurveySummary.jsx';
 
 // import reactLogo from './assets/react.svg'
 import './App.css'
@@ -75,7 +82,14 @@ function App() {
  
                 {/* SES */}
                 <Route path="/ses-intro"              element={<SESIntro />}></Route> 
-                <Route path="/ses-survey"             element={<SESStatusSurvey />}></Route> 
+                <Route path="/ses-selfefficacy"       element={<SESSelfEfficacySurvey />}></Route>
+                <Route path="/ses-risk"               element={<SESAttitudeRiskSurvey />}></Route>
+                <Route path="/ses-control"            element={<SESControlAuthoritySurvey />}></Route>
+                <Route path="/ses-privacy"            element={<SESPrivacySecuritySurvey />}></Route>
+                <Route path="/ses-comms"              element={<SESCommsSurvey />}></Route>
+                <Route path="/ses-access"             element={<SESAccessSurvey />}></Route>
+                <Route path="/ses-summary"            element={<SESSurveySummary />}></Route> 
+                <Route path="/ses-slider"             element={<SESSliderSurvey />}></Route> 
           </Routes>
           </section>
           </main>

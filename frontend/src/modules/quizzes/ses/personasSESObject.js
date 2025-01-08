@@ -1,16 +1,17 @@
 const personasSES = [
     {
-    "names": "Dav, Davina, Davida",
+    "names": "Dav, Davu, Davida",
     "portrait": "images/multiDav-2024.jpg",
     "background": {
       "age": "Not provided",
       "employment": "Not provided",
       "location": "Not provided",
       "pronouns": "her, him, them",
+      "Email": "Not provided",
       "mathLogic": "Not provided",
       "accessToTech": "Dav has spotty access to reliable devices with reliable internet access, so relies mainly on a mobile phone for internet access. Dav also often uses shared devices or public devices to get work done. Dav went to school in a low-SES community which offered only a basic education. Now Dav rarely chooses to read lengthy or complex text (e.g., newspapers), and some cultural/literary allusions are unfamiliar to Dav. Although the school had a few older computers, it offered little technology education."
       },
-      "Email": "Not provided",
+      "communicationLiteracy": "Background is pretty different from literacy/education/culture usage in technical communications. ",
       "motivationsAttitudes": {
           "taskCompletion": "To accomplish tasks.",
           "techInterest": "Uses what is familiar",
@@ -45,30 +46,31 @@ const personasSES = [
       }
     },
     { 
-      "names": "Unknown",
-      "portrait": "images/ses-persona-unknown.png",
+      "names": "Ash, Asha, Ashwin",
+      "portrait": "images/multiAsh-2024.jpg",
       "background": {
         "age": "Not provided",
         "employment": "Not provided",
         "location": "Not provided",
         "pronouns": "her, him, them",
-        "mathLogic": "Not provided",
-        "accessToTech": ""
-        },
         "Email": "Not provided",
+        "mathLogic": "Not provided",
+        "accessToTech": "Ash has consistent access to reliable technology."
+        },
+        "communicationLiteracy": "Background is fairly consistent with literacy/education/culture usage in techical communications. ",
         "motivationsAttitudes": {
             "taskCompletion": "Not provided",
             "techInterest": "Not provided",
             "description": "Not provided"
         },
         "techSelfEfficacy": {
-            "lowVsHigh": "Not provided",
-            "description": "Not provided",
+          "lowVsHigh": "Low",
+          "description": "Has lower confidence with Unfamiliar tech, relative to peers."
         },
         "attitudeTowardRisk": {
-            "AverseVsTolerant": "Not provided",
-            "description": "Not provided",
-        },
+          "AverseVsTolerant": "Risk-averse",
+          "description": "Is risk-averse about using untested technology features that might not work well.",
+        },        
         "infoProcessingStyle": {
             "comprehensiveVsSelective": "Not provided",
             "description": "Not provided"
@@ -77,8 +79,8 @@ const personasSES = [
           "processVsTinkering": "Not provided",
           "learningDescription": "Not provided",
           },
-        "perceivedControlAuthority": "Not provided",
-        "privacySecurity": "Not provided",
+        "perceivedControlAuthority": "Assumes they have power to challenge technology outcomes and decisions.",
+        "privacySecurity": "Is somewhat wary of the potential of technology privacy and security issues.",
         "summarySimple": "Not provided",
         "facetScores": {  // Currently unknown
           "High Self-Efficacy": [],  
@@ -88,9 +90,54 @@ const personasSES = [
           "Risk-averse": [],  
           "Not Risk-averse": []  
         }
-      }
+      },
 
-
+      { 
+        "names": "Fee, Felienne, Felix",
+        "portrait": "images/multiFee-2024.jpg",
+        "background": {
+          "age": "Not provided",
+          "employment": "Not provided",
+          "location": "Not provided",
+          "pronouns": "her, him, them",
+          "Email": "Not provided",
+          "mathLogic": "Not provided",
+          "accessToTech": "Fee has high access to reliable technology."
+          },
+          "communicationLiteracy": "Background is highly consistent with literacy/education/culture usage in techical communications. ",
+          "motivationsAttitudes": {
+              "taskCompletion": "Not provided",
+              "techInterest": "Not provided",
+              "description": "Not provided"
+          },
+          "techSelfEfficacy": {
+            "lowVsHigh": "high",
+            "description": "Has high confidence with unfamiliar tech, relative to their peers.",
+          },          
+          "attitudeTowardRisk": {
+            "AverseVsTolerant": "Risk-tolerant",
+            "description": "Is risk-tolerant about using untested technology features that might not work well.",
+          },
+          "infoProcessingStyle": {
+              "comprehensiveVsSelective": "Not provided",
+              "description": "Not provided",
+          },
+          "learningStyle": {
+            "processVsTinkering": "Not provided",
+            "learningDescription": "Not provided",
+            },
+          "perceivedControlAuthority": "Assumes they have power to challenge technology outcomes and decisions.",
+          "privacySecurity": "Beyond well-publicized privacy/security issues, Fee is not particularly concerned with them.",
+          "summarySimple": "Not provided",
+          "facetScores": {  // Currently unknown
+            "High Self-Efficacy": [],  
+            "Motivations: Technology for its own sake": [],  
+            "Learning: Tinkerer": [],  
+            "Comprehensive Information Processing": [],  
+            "Risk-averse": [],  
+            "Not Risk-averse": []  
+          }
+        }
 ];
 
 export default personasSES;

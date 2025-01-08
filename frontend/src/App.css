@@ -93,7 +93,8 @@ main {
     margin:0;
     background-color:var(--orangeL)
 }
-.consent {float:right; margin:0 0 -2.5% 36%; width:60%; font-size: 70%;}
+.consent, .consentSES {float:right; margin:0 0 -2.5% 36%; width:60%; font-size: 70%;}
+.consentSES {margin:0 0 -2.5% 40%; }
 
 #prompts button {margin:0 0 0 2%; border:0; color:var(--green); text-decoration:underline; background-color:transparent;}
 
@@ -173,7 +174,7 @@ li {margin-bottom:2%;}
     font-size:90%;
     float:left;
     margin-right:1%;
-    width:20px;
+    width:22px;
     text-align:center;
 }
 
@@ -272,7 +273,7 @@ select {
     width:300px;
  
 }
-.likertGroup {margin-top:4%;}
+.likertGroup, .selectGroup {margin-top:4%;}
 .likertGroup button {
     margin: 1% 2.5% 2% 0;
     border:0;
@@ -293,7 +294,9 @@ select {
     border:0;
 }
 
-
+.selectGroup {
+    width:300px;
+}
 
 /* card gallery */
 .card {	  
@@ -423,6 +426,7 @@ border-top-right-radius:5px;
     width: 80%;
     margin: 1% 2% 4% 2%;
     -webkit-appearance: none;
+    appearance:none;
     height: 20px;
     border-radius: 5px;
     background: var(--shadow);
