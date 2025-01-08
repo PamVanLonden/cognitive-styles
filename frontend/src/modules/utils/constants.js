@@ -7,5 +7,9 @@ export const SURVEY_PAGES = {
   Motivation: ['mSuiteApps', 'mSuiteLookGood', 'mSuiteTester'], 
   LearningStyle:  ['lsLesserKnownFeatures', 'lsLookAhead', 'lsUpdateSettings'], 
   InformationProcessingStyle: ['ipsGatherInfo', 'ipsResearch', 'ipsUnderstandDirection'], 
-  AttitudeTowardsRisk: ['atrAvoidAdvancedSections', 'atrAvoidDanger', 'atrUseUnproven'] 
+  AttitudeTowardsRisk: ['atrAvoidAdvancedSections', 'atrAvoidDanger', 'atrUseUnproven'], 
+  AccessToTech: ['artShare', 'artReliable', 'artInternet', 'artOwn'],
+  Communications: ['clecMaterials', 'clecEducation', 'clecTech', 'clecEnglish'],
+  ControlAuthority: ['caMost', 'caOften', 'caHaveControl', 'caTechUnfair'],
+  PrivacySecurity: ['psCameras', 'psFullName', 'psPictures', 'psDelete']
 };

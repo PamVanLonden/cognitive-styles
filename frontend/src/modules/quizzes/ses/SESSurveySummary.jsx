@@ -3,7 +3,7 @@ import { SurveyContext }  from '../../utils/SurveyContext';
 import { useSurveyForm }  from '../../utils/useSurveyForm'; 
 import { toTitleCase }    from '../../utils/Convert';
 import { determinePersona } from '../../utils/surveyScore';
-import  PersonaComparison  from '../../utils/PersonaComparison';
+import  SESPersonaComparison  from './SESPersonaComparison';
 import  personas  from './personasSESObject';
 import { ScreenshotButton} from '../../utils/ScreenshotButton';
 
@@ -42,20 +42,20 @@ function SESSurveySummary() {
     return <div>No survey data available. Please complete the survey first.</div>;
   }
 
-  // Extract Tim and Abi's images from personaObject
-  const timPersona = personas.find(persona => persona.names.includes("Tim"));
-  const abiPersona = personas.find(persona => persona.names.includes("Abi"));
-  const patPersona = personas.find(persona => persona.names.includes("Pat"));
-  const timImage = timPersona?.portrait;
-  const abiImage = abiPersona?.portrait;
-  const patImage = patPersona?.portrait;
+  // Extract Dav and Fee's images from personaObject
+  const feePersona = personas.find(persona => persona.names.includes("Fee"));
+  const ashPersona = personas.find(persona => persona.names.includes("Ash"));
+  const davPersona = personas.find(persona => persona.names.includes("Dav"));
+  const feeImage = feePersona?.portrait;
+  const ashImage = ashPersona?.portrait;
+  const davImage = davPersona?.portrait;
 
   // Converts page score to a number between 0 and 1, inclusive
   const normalizedPageScore = (score, page) => {
-    const maxTimPageScore = numPageResponses[page]*SURVEY_MAX_AGREE_VALUE;
-    const minTimPageScore = numPageResponses[page]*SURVEY_MIN_AGREE_VALUE;
-    const denominator = maxTimPageScore - minTimPageScore;
-    const numerator = score - minTimPageScore;
+    const maxFeePageScore = numPageResponses[page]*SURVEY_MAX_AGREE_VALUE;
+    const minFeePageScore = numPageResponses[page]*SURVEY_MIN_AGREE_VALUE;
+    const denominator = maxFeePageScore - minFeePageScore;
+    const numerator = score - minFeePageScore;
     return numerator / denominator;
   };
 
@@ -103,24 +103,24 @@ function SESSurveySummary() {
   // Calculate the grand total
   const grandTotal = Object.values(pageTotals).reduce((sum, total) => sum + total, 0);
 
-  // Calculates how Abi-like and Tim-like the respondant is for current facet
+  // Calculates how Dav-like and Fee-like the respondant is for current facet
   // Expects a score between 0 and 1, inclusive
-  const abiTimPercents = (score) => {
-    const timProportion = score;
-    const abiProportion = 1 - timProportion;
-    const timPercent = (timProportion * 100).toFixed(0);
-    const abiPercent = (abiProportion * 100).toFixed(0);
+  const davFeePercents = (score) => {
+    const feeProportion = score;
+    const davProportion = 1 - feeProportion;
+    const feePercent = (feeProportion * 100).toFixed(0);
+    const davPercent = (davProportion * 100).toFixed(0);
     return {
-      abiPercent: `${abiPercent}%`,
-      timPercent: `${timPercent}%`
+      davPercent: `${davPercent}%`,
+      feePercent: `${feePercent}%`
     };
   };
 
-  const abiPercent = (score) => { return abiTimPercents(score).abiPercent; };
-  const timPercent = (score) => { return abiTimPercents(score).timPercent; };
+  const davPercent = (score) => { return davFeePercents(score).davPercent; };
+  const feePercent = (score) => { return davFeePercents(score).feePercent; };
 
-  // Calculate how Tim-like the respondant is, across all facets for which they provided answers
-  const averageTimScore = () => {
+  // Calculate how Fee-like the respondant is, across all facets for which they provided answers
+  const averageFeeScore = () => {
     const { sum, count } = Object.entries(pageTotals).reduce((acc, [key, value]) => {  
 
         const score = normalizedPageScore(value, key);
@@ -149,8 +149,11 @@ function SESSurveySummary() {
     <>
       <h2>Socioeconomic Magnification Survey Summary</h2>
       <article>
-      <p>Based on your use of <strong>{(formValues.techOptions) || '[selection missing]'}</strong> and your selections on each of the survey pages, you are <strong>{abiPercent(averageTimScore())} like Abi</strong> and <strong>{timPercent(averageTimScore())} like Tim</strong>. 
-        Here is how you compare to the personas for each facet:</p>
+      <p>Based on your use of <strong>{(formValues.techOptions) || '[selection missing]'}</strong> 
+        and your selections on each of the survey pages, 
+        you are <strong>{davPercent(averageFeeScore())} like Dav</strong> and 
+        <strong>{feePercent(averageFeeScore())} like Fee</strong>. 
+          Here is how you compare to the personas for each facet:</p>
 
         <div className="survey-summary">
         {Object.entries(pageTotals).map(([page, total]) => {
@@ -163,16 +166,16 @@ function SESSurveySummary() {
             const pageScore = normalizedPageScore(total, page);
 
             return (
-              <PersonaComparison
+              <SESPersonaComparison
               key={page}
               page={page}
               facet={toTitleCase(page)}
               score={pageScore} // Value between 0 and 1, inclusive
-              abiPercent={abiPercent(pageScore)}
-              timPercent={timPercent(pageScore)}
-              timImage={timImage}
-              abiImage={abiImage}
-              patImage={patImage}
+              davPercent={davPercent(pageScore)}
+              feePercent={feePercent(pageScore)}
+              feeImage={feeImage}
+              davImage={davImage}
+              ashImage={ashImage}
               surveyData={surveyData} // Include surveyData for debugging if needed
             />
             );
@@ -183,18 +186,18 @@ function SESSurveySummary() {
 
       </article>
 
-      <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
-        <Link to="/attitude-risk-survey">&larr; Previous page</Link>
+      <nav className="proceed" role="navigation" aria-label="Move back a page.">
+        <Link to="/ses-access">&larr; Previous page</Link>
         <ScreenshotButton /> 
       </nav>
 
-      <article class="proceed continueSurvey floatRight" role="navigation" aria-label="Proceed to a new survey?" >
+      {/* <article class="proceed continueSurvey floatRight" role="navigation" aria-label="Proceed to a new survey?" >
       <h2>There is more...</h2>
       <p>Would you like to take the <strong>Socioeconomic Status</strong> Survey?</p>
       <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
         <Link to="/ses-intro" class="ses">Yes</Link>
         </nav>
-      </article>
+      </article> */}
 
     </>
   );
