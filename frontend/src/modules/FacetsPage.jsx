@@ -1,4 +1,4 @@
-import  facets  from './data/facetsObject';
+import  facets  from './quizzes/gender/facetsObject';
 import { toTitleCase } from './utils/Convert';
 import { Link } from 'react-router-dom';
 import { useSurveyForm } from './utils/useSurveyForm'; 

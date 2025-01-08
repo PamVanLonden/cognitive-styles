@@ -29,6 +29,8 @@ return (
             <li><a href="https://www.npmjs.com/package/@rollup/plugin-wasm" target="_blank">rollup</a> for use on Render.com. </li>
             <li><a href="https://html2canvas.hertzen.com/" target="_blank">html2Canvas</a> and 
                 <a href="https://www.npmjs.com/package/pica" target="_blank">Pica</a>, for downloading compressed image files.</li>
+            <li><a href="https://www.emailjs.com/docs/examples/reactjs/" target="_blank">Emailjs-com</a> to allow users to send comments and questions.</li>
+            <li>SiteMap for auto-generating a sitemap for SEO.</li>
         </ul>
         
         <h2>Accessibility features</h2>

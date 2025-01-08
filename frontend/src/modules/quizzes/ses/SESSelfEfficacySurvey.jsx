@@ -1,0 +1,114 @@
+import { Link } from 'react-router-dom';
+import ButtonGroup from '../../utils/ButtonGroup.jsx';
+import { useSurveyForm } from '../../utils/useSurveyForm.jsx'; // Import the custom hook
+
+const SESSelfEfficacySurvey = () => {
+    const { formValues, handleTechOptionChange, handleInputChange, handleNextPage, techOptions } = useSurveyForm();
+    
+    return (
+        <>
+           <h2>Socioeconomic Magnification Facets Survey </h2>
+           <article>
+                
+                <h3>Part 1 of 6</h3>
+                <p>This part of the survey focuses on your confidence in your ability to achieve specific goals or tasks.</p>
+                <p>Complete the survey to see how alike your learning styles are amongst your peers,
+                     when learning new technology skills.
+                </p>
+
+                <div>
+                   <label htmlFor="techOptions"> 
+                        For the survey questions, I choose to focus on this technology: &nbsp;
+                        <select 
+                            name="techOptions" 
+                            value={formValues.techOptions || ''} 
+                            onChange={handleTechOptionChange}  // Use dedicated handler
+                        >
+                            <option value="">choose...</option>
+                                {Object.values(techOptions).map((techOption, index) => (
+                            <option key={index} value={techOption}>{techOption}</option>
+                            ))}
+                    </select>
+                    </label>
+                </div>
+
+            <form id="survey">
+                 
+                    <p className="consentSES">By completing the survey, you consent to allow Google 
+                    <br />to track your your city, device-type, and browser.
+                    </p>
+                 
+                <fieldset><legend>Technology Self-efficacy</legend>
+ 
+                    <div className="question "><span className="circle">1</span> 
+                      <label htmlFor="sefHelpMenu">  
+                        I am able to use {formValues.techOptions || '...'}&nbsp;when 
+                        I have just the built-in "Help" menu for assistance. 
+                        </label>
+                        <ButtonGroup name="sefHelpMenu" onChange={handleInputChange} />
+                    </div>
+                    
+                    <div className="question indent">
+                        <label htmlFor="sefWatchedSomeone">
+                            I can use  {formValues.techOptions || '...'}&nbsp;when 
+                            I have seen someone else using it, 
+                            before trying it myself. 
+                        </label>
+                        <ButtonGroup name="sefWatchedSomeone" onChange={handleInputChange} />
+                    </div>
+                    
+                    {/* <div className="question indent">
+                    <label htmlFor="sefNoOneHelped">
+                        I can use  {formValues.techOptions || '...'}&nbsp;when 
+                        no one is around to help me. </label>
+                        <ButtonGroup name="sefNoOneHelped" onChange={handleInputChange} />
+                    </div> */}
+                    
+                    <div className="question indent">
+                        <label htmlFor="sefSomeoneHelped">
+                        I can use  {formValues.techOptions || '...'}&nbsp;when 
+                        someone else has helped me get started. </label>
+                        <ButtonGroup name="sefSomeoneHelped" onChange={handleInputChange} />
+                    </div>
+                    
+                    <div className="question indent">
+                    <label htmlFor="sefSomeoneShowedMe">
+                        I can use  {formValues.techOptions || '...'}&nbsp;when 
+                        someone has shown me how to do it first. </label>
+                        <ButtonGroup name="sefSomeoneShowedMe" onChange={handleInputChange} />
+                    </div>
+                    
+                    {/* <div className="question indent">
+                    <label htmlFor="sefUsedSimilar">
+                        I can use  {formValues.techOptions || '...'}&nbsp;because 
+                        I have used similar technology before to do the same task. </label>
+                        <ButtonGroup name="sefUsedSimilar" onChange={handleInputChange} />
+                    </div> */}
+
+                    {/* <div className="question indent">
+                    <label htmlFor="sefNeverUsed">
+                        I am confident I can use  {formValues.techOptions || '...'}&nbsp;even 
+                        though I have never used anything like it before. </label>
+                        <ButtonGroup name="sefNeverUsed" onChange={handleInputChange} />
+                    </div> */}
+
+                    {/* <div className="question">
+                    <label htmlFor="sefNoConfidence">
+                        <span className="circle">2.</span> &nbsp;
+                        I am not confident about my ability to use and learn {formValues.techOptions || '...'}. 
+                        I have other strengths. </label>
+                        <ButtonGroup name="sefNoConfidence" onChange={handleInputChange} />
+                     </div> */}
+                     
+                     <nav className="proceed" role="navigation" aria-label="Proceed to the next most logical page.">
+                        <Link to="/ses-intro" onClick={handleNextPage}>&larr; SES Intro page </Link>
+                        <Link to="/ses-risk" onClick={handleNextPage}>Next page &rarr;</Link>
+                    </nav>
+                </fieldset>
+            </form>
+           </article>
+        </>
+    );
+};
+
+export default SESSelfEfficacySurvey;

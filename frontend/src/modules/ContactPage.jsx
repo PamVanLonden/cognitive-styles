@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
+import Captcha from './utils/Captcha';
 import emailjs from 'emailjs-com';
+        // service_50guucf
+        // public key RfXyLTcIAEQczcB0z
+        // template id template_rlrtct8
+
+function toTitleCase(name) {
+    return name.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase());
+}
 
 function ContactPage() {
+    const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+    const [formError, setFormError] = useState('');
+    const [fromName, setFromName] = useState('');
+    const [replyTo, setReplyTo] = useState('');
     const [message, setMessage] = useState('');
-    const [fromName, setFromName] = useState('');  
-    const [replyTo, setReplyTo] = useState('');   
-    const [captchaAnswer, setCaptchaAnswer] = useState('');
-    const [captchaError, setCaptchaError] = useState('');
     const [showConfirmation, setShowConfirmation] = useState(false);
-    const correctCaptchaAnswer = "7";
+    const [confirmationName, setConfirmationName] = useState('');
+    const [confirmationMessage, setConfirmationMessage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Check CAPTCHA
-        if (captchaAnswer !== correctCaptchaAnswer) {
-            setCaptchaError('Incorrect CAPTCHA answer. Please try again.');
+        if (!isCaptchaValid) {
+            setFormError('Try a different value.');
             return;
         }
 
-        // Define email template parameters
+        setFormError('');
+        
         const templateParams = {
             from_name: fromName,
             reply_to: replyTo,
             message: message,
         };
 
-        // Send email using emailjs
         emailjs.send(
             'service_50guucf',
             'template_rlrtct8',
@@ -35,12 +43,16 @@ function ContactPage() {
         )
         .then((result) => {
             console.log('Email sent successfully:', result.text);
+
+            // Store name and message for confirmation display
+            setConfirmationName(toTitleCase(fromName));
+            setConfirmationMessage(message);
             setShowConfirmation(true);
+
+            // Clear form fields
             setMessage('');
             setFromName('');
             setReplyTo('');
-            setCaptchaAnswer('');
-            setCaptchaError('');
 
             // Hide confirmation message after 5 seconds
             setTimeout(() => setShowConfirmation(false), 5000);
@@ -49,15 +61,16 @@ function ContactPage() {
             console.error('Email not sent:', error);
         });
     };
-    
+
+    const handleCaptchaValidation = (isValid) => {
+        setIsCaptchaValid(isValid);
+    };
+
     return (
         <>
             <h2>Contact the Researchers</h2>
             <article>
-                <h3> </h3>
-                <p></p>
-                 
-                 <form onSubmit={handleSubmit} method="POST" id="contact">
+                <form onSubmit={handleSubmit} method="POST" id="contact">
                     <fieldset>
                         <legend>What would you like to tell us?</legend>
                         
@@ -68,7 +81,7 @@ function ContactPage() {
                                 id="message"
                                 minLength={3}
                                 maxLength={300}
-                                aria-required
+                                aria-required="true"
                                 autoFocus
                                 placeholder="300 character limit."
                                 value={message} 
@@ -82,7 +95,7 @@ function ContactPage() {
                                 type="text" 
                                 id="fromName" 
                                 value={fromName}
-                                aria-required
+                                aria-required="true"
                                 placeholder="Jane Doe"
                                 onChange={(e) => setFromName(e.target.value)} 
                             />
@@ -91,35 +104,27 @@ function ContactPage() {
                         <p>
                             <label htmlFor="email">Email address</label>
                             <input 
-                                type="replyTo" 
+                                type="email" 
                                 id="replyTo" 
                                 value={replyTo}
-                                aria-required
+                                aria-required="true"
                                 placeholder="jane@doe.com"
                                 onChange={(e) => setReplyTo(e.target.value)} 
                             />
                         </p>
 
-                         <p>
-                            <label htmlFor="captcha">What is 2 + 5?</label>
-                            <input
-                                type="text"
-                                name="captcha"
-                                id="captcha"
-                                value={captchaAnswer}
-                                onChange={(e) => setCaptchaAnswer(e.target.value)}
-                                placeholder="Enter the answer"
-                            />
-                            {captchaError && <p style={{color: 'red'}}>{captchaError}</p>}
-                            </p>
+                        <p>
+                            <Captcha onValidate={handleCaptchaValidation} />
+                            {formError && <p style={{ color: 'red' }}>{formError}</p>}
+                        </p>
 
                         <button type="submit">Send Message</button>
                         
                         {showConfirmation && (
-                            <div className="confirmation" id="confirmation" >
-                                <h3>Thank you, {fromName}. </h3>
+                            <div className="confirmation" id="confirmation">
+                                <h3>Thank you, {confirmationName}. </h3>
                                 <p>Your message has been sent:</p>
-                                <p>{message}</p>
+                                <p>{confirmationMessage}</p>
                             </div>
                         )}
                     </fieldset>

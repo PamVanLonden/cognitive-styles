@@ -1,4 +1,4 @@
-import  personas  from './data/personasObject';
+import  personas  from './quizzes/gender/personasObject';
 import { Link } from 'react-router-dom';
 import { useSurveyForm } from './utils/useSurveyForm'; // Import the custom hook
 

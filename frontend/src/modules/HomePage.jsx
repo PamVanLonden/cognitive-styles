@@ -5,9 +5,9 @@ function HomePage(){
     const { handleNextPage } = useSurveyForm();
     return (
         <>
-           <h2>Welcome!</h2>
+           <h2>Welcome, students!</h2>
            <article>
-                <h3>Introduction</h3>
+                <h3>Introduction to the research</h3>
 
                 <p>Do you sometimes feel that you do not belong in this program, or some of its courses?
                    The instructors assure you that you do belong! 
@@ -28,7 +28,7 @@ function HomePage(){
 
                 
                 <p>Explore the Facets and Personas by clicking on the tabs at the top, 
-                    then analyze which persona fits you best, by taking the <strong>Survey</strong>.</p>
+                    then analyze which personas fit you best, by taking the <strong>Survey</strong>.</p>
 
                 <p>Below is a diagram of how the Personas and Facets relate:</p>
                 <img src="./images/persona-scale-faces.png" alt="Diagram of how the Personas and Facets relate." title="" />
